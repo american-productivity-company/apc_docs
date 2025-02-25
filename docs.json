@@ -17,20 +17,6 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting Started",
-            "pages": [
-              "quickstart",
-              "setting-up-your-assistant"
-            ]
-          },
-          {
-            "group": "FAQs",
-            "pages": [
-              "faqs/assistant-information",
-              "faqs/data-used-to-train"
-            ]
-          },
-          {
             "group": "Legal",
             "pages": [
               {
@@ -60,7 +46,7 @@
         },
         {
           "anchor": "Blog",
-          "href": "https://www.withtime.ai/blog-index",
+          "href": "https://www.withtime.ai/blog",
           "icon": "newspaper"
         }
       ]
