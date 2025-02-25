@@ -7,6 +7,9 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
+  "fonts": {
+    "family": "Manrope"
+  },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
@@ -21,20 +24,10 @@
             ]
           },
           {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
             "group": "FAQs",
             "pages": [
-              "faqs/assistant-information"
+              "faqs/assistant-information",
+              "faqs/data-used-to-train"
             ]
           },
           {
@@ -43,8 +36,8 @@
               {
                 "group": "Terms of Service",
                 "pages": [
-                  "legal/terms-of-service/application-terms-of-service",
-                  "legal/terms-of-service/platform-terms-of-service"
+                  "legal/terms-of-service/platform-terms-of-service",
+                  "legal/terms-of-service/user-terms-of-service"
                 ]
               },
               "legal/privacy-policy"
@@ -61,9 +54,9 @@
           "icon": "arrow-up-right"
         },
         {
-          "anchor": "Community",
-          "href": "https://www.withtime.ai/community",
-          "icon": "slack"
+          "anchor": "Support",
+          "href": "mailto:support@withtime.ai",
+          "icon": "envelope"
         },
         {
           "anchor": "Blog",
@@ -93,7 +86,8 @@
   "footer": {
     "socials": {
       "x": "https://x.com/withtime_ai",
-      "linkedin": "https://www.linkedin.com/company/withtime-ai/about/"
+      "linkedin": "https://www.linkedin.com/company/withtime-ai/about/",
+      "website": "https://www.withtime.ai"
     }
   }
 }
