@@ -3,9 +3,9 @@
   "theme": "palm",
   "name": "Righthand Platform",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#D35A47",
+    "light": "#E68B7F",
+    "dark": "#A63F33"
   },
   "fonts": {
     "family": "Manrope"
