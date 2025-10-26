@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "palm",
-  "name": "Time AI Platform",
+  "name": "Righthand Platform",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -36,17 +36,17 @@
       "anchors": [
         {
           "anchor": "Signup",
-          "href": "https://platform.withtime.ai",
+          "href": "https://platform.righthand.ai",
           "icon": "arrow-up-right"
         },
         {
           "anchor": "Support",
-          "href": "mailto:support@withtime.ai",
+          "href": "mailto:support@righthand.ai",
           "icon": "envelope"
         },
         {
           "anchor": "Blog",
-          "href": "https://www.withtime.ai/blog",
+          "href": "https://www.righthand.ai/blog",
           "icon": "newspaper"
         }
       ]
@@ -60,20 +60,20 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@withtime.ai"
+        "href": "mailto:support@righthand.ai"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Signup",
-      "href": "https://platform.withtime.ai"
+      "href": "https://platform.righthand.ai"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/withtime_ai",
-      "linkedin": "https://www.linkedin.com/company/withtime-ai/about/",
-      "website": "https://www.withtime.ai"
+      "x": "https://x.com/makecloudpeople",
+      "linkedin": "https://www.linkedin.com/company/righthand-ai/about/",
+      "website": "https://www.righthand.ai"
     }
   }
 }
