@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "palm",
-  "name": "Righthand Platform",
+  "name": "Righthand Docs",
   "colors": {
     "primary": "#D35A47",
     "light": "#E68B7F",
@@ -10,7 +10,7 @@
   "fonts": {
     "family": "Manrope"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
     "tabs": [
       {
@@ -36,17 +36,17 @@
       "anchors": [
         {
           "anchor": "Signup",
-          "href": "https://platform.righthand.ai",
+          "href": "https://www.righthand.ai",
           "icon": "arrow-up-right"
         },
         {
           "anchor": "Support",
-          "href": "mailto:support@righthand.ai",
+          "href": "mailto:support@humans.righthand.ai",
           "icon": "envelope"
         },
         {
           "anchor": "Blog",
-          "href": "https://www.righthand.ai/blog",
+          "href": "https://enterprise.righthand.ai/blog",
           "icon": "newspaper"
         }
       ]
@@ -60,13 +60,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@righthand.ai"
+        "href": "mailto:support@humans.righthand.ai"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Signup",
-      "href": "https://platform.righthand.ai"
+      "href": "https://www.righthand.ai"
     }
   },
   "footer": {

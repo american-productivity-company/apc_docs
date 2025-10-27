@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-Docs content lives in top-level `.mdx` files (`introduction.mdx`, `quickstart.mdx`) and sectional folders. `essentials/`, `faqs/`, and `snippets/` hold reusable guide content, while `legal/` captures policy pages. API reference material sits in `api-reference/` with `openapi.json` and `endpoint/` examples. Shared assets are under `images/`, `logo/`, and `favicon.svg`. Tweak global navigation, styling, and brand settings through `docs.json` at the root.
+Docs content lives in top-level `.mdx` files (`introduction.mdx`, `quickstart.mdx`) and sectional folders. `essentials/`, `faqs/`, and `snippets/` hold reusable guide content, while `legal/` captures policy pages. API reference material sits in `api-reference/` with `openapi.json` and `endpoint/` examples. Shared assets are under `images/`, `logo/`, and `favicon.png`. Tweak global navigation, styling, and brand settings through `docs.json` at the root.
 
 ## Build, Test, and Development Commands
 Install the Mintlify CLI once per machine with `npm i -g mintlify`. Run `mintlify install` whenever the preview server fails to resolve components or dependencies. Use `mintlify dev` from the repo root (where `docs.json` lives) to launch the local preview; add `--open` if you want the browser to auto-start.
