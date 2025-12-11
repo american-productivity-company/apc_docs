@@ -1,0 +1,285 @@
+---
+title: "Righthands as Software Developers"
+description: "Righthands work as integrated software developers, handling code review, documentation, and development workflows"
+icon: "code"
+---
+
+## As Software Developers
+
+Righthands serve as fully integrated software developers within your organization, handling routine development tasks, providing code insights, and optimizing development workflows. They work alongside your team to increase productivity and code quality.
+
+## What Righthands Can Do
+
+As software developers, Righthands can:
+
+<CardGroup cols={2}>
+  <Card title="Software Development" icon="code-branch" href="/employee-types/software-developer/software-development">
+    Implement features and fixes from Linear or Jira issues, delivering PRs for review
+  </Card>
+  <Card title="Code Review" icon="magnifying-glass-chart" href="/employee-types/software-developer/code-review-assistance">
+    Review code, identify potential issues, and improve code quality
+  </Card>
+  <Card title="Documentation" icon="book" href="/employee-types/software-developer/documentation-generation">
+    Write and maintain comprehensive documentation
+  </Card>
+  <Card title="Bug Triage" icon="bug" href="/employee-types/software-developer/bug-triage">
+    Analyze bug reports, prioritize issues, and recommend solutions
+  </Card>
+  <Card title="Sprint Planning" icon="list-check" href="/employee-types/software-developer/sprint-planning">
+    Break down stories, estimate effort, and plan sprints
+  </Card>
+</CardGroup>
+
+## GitHub Account Setup
+
+The first step is setting up your Righthand's GitHub access. You have two options:
+
+### Option 1: Use Your Personal GitHub Account
+
+**Benefits:**
+- Code contributions appear under your name
+- May look better within organizations where visibility matters
+- Single identity across all repositories
+
+**Considerations:**
+- All Righthand activity is attributed to you
+- Less separation between your work and Righthand's work
+
+### Option 2: Create a Dedicated GitHub Account (Recommended)
+
+**Benefits:**
+- Clear separation between your work and Righthand's contributions
+- Granular permission control per repository
+- Easier to track what the Righthand has done
+- Can revoke access without affecting your personal account
+
+**Considerations:**
+- Requires managing an additional GitHub account
+- May require organization admin approval for repository access
+
+<Warning>
+We recommend creating a separate GitHub account for your Righthand to maintain clear attribution and control over permissions.
+</Warning>
+
+## Step-by-Step Setup Guide
+
+<Steps>
+  <Step title="Create or Choose GitHub Account">
+    **If creating a new account for your Righthand:**
+    1. Go to [github.com/signup](https://github.com/signup)
+    2. Use an email like `righthand-[yourname]@yourdomain.com`
+    3. Choose a username like `righthand-yourname`
+    4. Complete the GitHub signup process
+
+    **If using your existing account:**
+    Skip to the next step
+  </Step>
+
+  <Step title="Configure Repository Permissions">
+    Grant the GitHub account access to repositories where the Righthand will work:
+
+    **For Organization Repositories:**
+    1. Ask your GitHub organization admin to invite the Righthand's account
+    2. Grant appropriate permissions based on responsibilities:
+       - **Write access**: For creating branches and pull requests
+       - **Maintain access**: For managing issues and PRs (recommended)
+       - **Admin access**: Only if the Righthand needs repository settings control
+
+    **For Personal Repositories:**
+    1. Go to repository Settings > Collaborators
+    2. Add the Righthand's GitHub account
+    3. Grant **Write** or **Maintain** permissions
+
+    <Tip>
+    Start with **Write** permissions. You can always increase permissions later based on needs.
+    </Tip>
+  </Step>
+
+  <Step title="Connect GitHub to Your Righthand">
+    1. Log in to your Righthand dashboard
+    2. Navigate to Settings > Integrations
+    3. Click "Connect GitHub"
+    4. Sign in with the Righthand's GitHub account (or your personal account)
+    5. Authorize the Righthand application
+    6. Confirm the connection is successful
+
+    The Righthand will now use this GitHub account for all repository operations.
+  </Step>
+
+  <Step title="Connect Repository to Righthand">
+    When you want your Righthand to work on a specific repository:
+
+    1. Send the repository link to your Righthand:
+       ```
+       "Work on this repository: https://github.com/yourorg/yourproject"
+       ```
+
+    2. The Righthand will clone the repository
+       <Note>
+       The clone process can take several minutes depending on repository size. Be patient during this initial setup.
+       </Note>
+
+    3. Specify the working branch:
+       ```
+       "Work on the 'dev' branch"
+       "Create a feature branch from 'main'"
+       "Work within the 'feature/new-auth' branch"
+       ```
+
+    The Righthand will now have access to the codebase and can begin working.
+  </Step>
+
+  <Step title="Set Up Project Management Integration (Recommended)">
+    Connect Linear or another project management tool for better workflow:
+
+    **Linear Integration (Native Support):**
+    1. In Righthand Settings, go to Integrations
+    2. Click "Connect Linear"
+    3. Authorize Linear access for your workspace
+    4. The Righthand can now read issues, create tasks, and update status
+
+    **Benefits:**
+    - Assign work through Linear issues
+    - Righthand automatically links PRs to issues
+    - Status updates sync between Linear and GitHub
+    - Better context for what needs to be built
+
+    <Tip>
+    Use Linear to plan features, then tell your Righthand: "Implement Linear issue ENG-123 and create a PR to the dev branch"
+    </Tip>
+  </Step>
+
+  <Step title="Configure Coding Standards">
+    Set preferences for how your Righthand should code:
+    - Preferred languages and frameworks
+    - Code style guidelines (linting rules, formatting)
+    - Testing requirements (coverage thresholds, test frameworks)
+    - Documentation standards
+    - Branch naming conventions
+    - Commit message format
+  </Step>
+</Steps>
+
+## Working with Your Righthand Developer
+
+### Typical Workflow
+
+<AccordionGroup>
+  <Accordion title="Collaborative Issue Creation">
+    Work together to plan features:
+
+    1. Connect Linear to your Righthand
+    2. "Let's plan the user authentication feature"
+    3. Righthand helps draft the Linear issue with:
+       - Technical requirements
+       - Acceptance criteria
+       - Implementation approach
+       - Estimated effort
+    4. Review and finalize the issue in Linear
+    5. Assign to Righthand or have it start automatically
+  </Accordion>
+
+  <Accordion title="Direct Feature Implementation">
+    Assign work directly without formal ticketing:
+
+    1. "Implement OAuth login for our application"
+    2. "Work on the main branch" (or specify feature branch)
+    3. Righthand builds the feature
+    4. Creates a pull request to your specified branch
+    5. You review the PR and provide feedback
+    6. Righthand addresses your comments
+    7. You merge when satisfied
+  </Accordion>
+
+  <Accordion title="Issue-Driven Development">
+    Use Linear issues to manage development:
+
+    1. Create or assign Linear issue to Righthand
+    2. "Please implement issue ENG-456 and submit a PR to the dev branch"
+    3. Righthand:
+       - Reads the issue details
+       - Creates a feature branch
+       - Implements the requirements
+       - Writes tests
+       - Submits PR linked to the Linear issue
+    4. Review the PR in GitHub
+    5. Leave comments if changes needed
+    6. "Please address the comments on PR #123"
+    7. Righthand makes requested changes
+    8. Merge and Linear issue automatically updates
+  </Accordion>
+
+  <Accordion title="Code Review Feedback Loop">
+    Iterate on pull requests:
+
+    1. Righthand submits PR for review
+    2. You review and add comments in GitHub:
+       - "This function needs error handling"
+       - "Can we optimize this query?"
+       - "Add tests for the edge case"
+    3. Tell Righthand: "Please respond to the review comments on PR #789"
+    4. Righthand addresses each comment with new commits
+    5. Review the updates
+    6. Request additional changes or approve and merge
+  </Accordion>
+</AccordionGroup>
+
+## Repository Cloning
+
+<Info>
+**First-time setup**: When the Righthand first connects to a repository, the cloning process can take several minutes (sometimes 10-15 minutes for large repositories). This is normal. Subsequent operations will be faster as the Righthand maintains a local copy.
+</Info>
+
+Once cloned, you can:
+- Switch between branches quickly
+- Have Righthand work on multiple feature branches
+- Pull latest changes as needed
+
+## Branch Strategy
+
+Specify which branch the Righthand should work on:
+
+| Branch Type | Use Case | Example |
+|-------------|----------|---------|
+| **Main** | Hotfixes, small updates | "Fix typo in README on main" |
+| **Dev/Development** | Features going to staging first | "Add new API endpoint to dev branch" |
+| **Feature Branch** | Isolated feature development | "Work on feature/oauth-integration branch" |
+| **New Feature Branch** | Start new feature from base | "Create feature/user-profiles from main" |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Provide Clear Context">
+    Provide context about the programming language, framework, and project goals for better results.
+  </Accordion>
+  <Accordion title="Review Technical Output">
+    Review and test code suggestions or architectural recommendations before implementing.
+  </Accordion>
+  <Accordion title="Leverage for Documentation">
+    Assign documentation tasks and refine outputs with domain-specific knowledge.
+  </Accordion>
+  <Accordion title="Use for Knowledge Transfer">
+    Have your Righthand explain unfamiliar codebases or new technologies to the team.
+  </Accordion>
+</AccordionGroup>
+
+## Development Workflow Integration
+
+Righthands integrate into daily development workflows:
+
+- **Morning Standup**: Provide summaries of pending PRs, open issues, and priorities
+- **Code Review**: Deliver preliminary analysis of pull requests before human review
+- **Documentation**: Write API docs, README updates, and inline comments
+- **Bug Investigation**: Research similar issues and identify potential root causes
+
+## Next Steps
+
+Ready to dive deeper? Explore specific use cases:
+
+- [Code Review Assistance](/employee-types/software-developer/code-review-assistance) - Improve code quality and review efficiency
+- [Documentation Generation](/employee-types/software-developer/documentation-generation) - Keep your docs up-to-date effortlessly
+- [Bug Triage](/employee-types/software-developer/bug-triage) - Streamline issue resolution
+
+<Info>
+Have questions? Contact [support@humans.righthand.ai](mailto:support@humans.righthand.ai) for assistance.
+</Info>

@@ -1,0 +1,387 @@
+---
+title: "Code Review"
+description: "Righthands improve code quality, identify issues, and streamline the code review process"
+icon: "code-compare"
+---
+
+## Overview
+
+Code reviews are critical for maintaining code quality but can be time-consuming. Righthands perform preliminary code analysis, identify potential issues, and help teams be more effective in their review process.
+
+## Core Capabilities
+
+### Pre-Review Analysis
+
+Before human review, Righthands provide:
+
+<CardGroup cols={2}>
+  <Card title="Code Quality Check" icon="shield-check">
+    Identify code smells, complexity issues, and style violations
+  </Card>
+  <Card title="Security Scan" icon="lock">
+    Flag potential security vulnerabilities and unsafe patterns
+  </Card>
+  <Card title="Performance Review" icon="gauge-high">
+    Spot inefficient algorithms and performance bottlenecks
+  </Card>
+  <Card title="Test Coverage" icon="vial">
+    Verify adequate test coverage for changed code
+  </Card>
+</CardGroup>
+
+### Support for Code Authors
+
+<Steps>
+  <Step title="Pre-Submission Review">
+    Performs review before PR submission to catch obvious issues
+  </Step>
+  <Step title="Description Generation">
+    Generates comprehensive PR descriptions from commit messages and code changes
+  </Step>
+  <Step title="Test Recommendations">
+    Suggests test cases based on code changes
+  </Step>
+  <Step title="Breaking Change Detection">
+    Identifies potential breaking changes to flag for reviewers
+  </Step>
+</Steps>
+
+### Support for Reviewers
+
+<Steps>
+  <Step title="Change Summary">
+    Provides high-level summary of what changed and why
+  </Step>
+  <Step title="Risk Assessment">
+    Identifies which changes carry highest risk
+  </Step>
+  <Step title="Context Gathering">
+    Compiles related tickets, previous discussions, and architectural decisions
+  </Step>
+  <Step title="Review Comments">
+    Generates draft review comments for common issues
+  </Step>
+</Steps>
+
+## Common Use Cases
+
+### Pre-Submission Code Review
+
+<CodeGroup>
+```text Your Request
+"Review my changes in the authentication module before I submit the PR"
+```
+
+```text Righthand Analysis
+ANALYSIS COMPLETE - 247 lines changed across 4 files
+
+ISSUES FOUND:
+
+🔴 CRITICAL (1)
+- Password comparison using == instead of secure comparison
+  File: auth/password.js:45
+  Recommendation: Use crypto.timingSafeEqual() to prevent timing attacks
+
+🟡 WARNINGS (3)
+- Error message reveals whether username exists (information leak)
+  File: auth/login.js:78
+- Missing input validation on email parameter
+  File: auth/registration.js:34
+- TODO comment left in production code
+  File: auth/session.js:120
+
+✅ IMPROVEMENTS (2)
+- Consider adding rate limiting to login endpoint
+- Session timeout could be configurable
+
+TESTS:
+- 12 new tests added ✓
+- Coverage increased from 78% to 85% ✓
+- Missing edge case: password reset token expiration
+
+Would you like me to generate fixes for the critical issue?
+```
+</CodeGroup>
+
+### Pull Request Description Generation
+
+Righthand can analyze your commits and changes to create comprehensive PR descriptions:
+
+<AccordionGroup>
+  <Accordion title="What Changed">
+    High-level summary of modifications, additions, and deletions
+  </Accordion>
+  <Accordion title="Why Changed">
+    Link to tickets, explain motivation, provide business context
+  </Accordion>
+  <Accordion title="How to Test">
+    Steps for reviewers to verify the changes work correctly
+  </Accordion>
+  <Accordion title="Deployment Notes">
+    Migration steps, configuration changes, or special deployment requirements
+  </Accordion>
+</AccordionGroup>
+
+**Example prompt**: "Generate a PR description for my branch 'feature/oauth-integration'"
+
+### Reviewer's Pre-Review Briefing
+
+Before diving into code, reviewers can ask:
+
+```text Example Queries
+"Summarize the changes in PR #324"
+"What are the riskiest parts of this change?"
+"Has this component been modified recently?"
+"What related PRs should I review for context?"
+```
+
+<Tip>
+Use Righthand to identify which files need the most careful review based on complexity, risk, and test coverage.
+</Tip>
+
+### Code Pattern Consistency
+
+Righthand can verify consistency with codebase patterns:
+
+<Steps>
+  <Step title="Identify Pattern Deviations">
+    Compare new code against established patterns in the codebase
+  </Step>
+  <Step title="Style Consistency">
+    Check naming conventions, file organization, and code structure
+  </Step>
+  <Step title="Architectural Compliance">
+    Verify changes follow architectural decisions and layer separation
+  </Step>
+</Steps>
+
+## Advanced Features
+
+### Security-Focused Review
+
+For security-critical changes, Righthand performs deep analysis:
+
+| Security Check | What It Detects |
+|----------------|-----------------|
+| Injection vulnerabilities | SQL, command, LDAP injection patterns |
+| Authentication issues | Weak auth, session management flaws |
+| Authorization problems | Missing access controls, privilege escalation |
+| Data exposure | Sensitive data in logs, error messages, or URLs |
+| Cryptography | Weak algorithms, hard-coded secrets, key management |
+| Dependencies | Known vulnerabilities in dependencies |
+
+### Performance Impact Analysis
+
+Ask Righthand to evaluate performance implications:
+
+```text Example Analysis
+"Analyze performance impact of changes in PR #456"
+
+PERFORMANCE ANALYSIS:
+
+Database Queries:
+- Added 2 new queries in product listing (potential N+1 issue)
+- Recommendation: Use eager loading or add caching
+
+API Calls:
+- External API now called on every request (was cached before)
+- Impact: Estimated 200-500ms added latency
+- Recommendation: Restore caching or move to background job
+
+Memory:
+- New data structure increases memory usage by ~15%
+- Within acceptable limits for typical workload
+- Monitor in production for high-volume scenarios
+```
+
+### Breaking Change Detection
+
+Righthand identifies potential breaking changes:
+
+<CardGroup cols={2}>
+  <Card title="API Changes" icon="plug">
+    Modified or removed public API methods
+  </Card>
+  <Card title="Data Schema" icon="database">
+    Database schema changes requiring migration
+  </Card>
+  <Card title="Configuration" icon="gear">
+    New required environment variables or config
+  </Card>
+  <Card title="Dependencies" icon="boxes-stacked">
+    Updated dependencies with breaking changes
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+### For Code Authors
+
+<Steps>
+  <Step title="Run Self-Review First">
+    Use Righthand to catch issues before submitting for review
+  </Step>
+  <Step title="Generate Comprehensive Description">
+    Let Righthand draft PR description, then add business context
+  </Step>
+  <Step title="Address Automated Feedback">
+    Fix issues flagged by Righthand before requesting human review
+  </Step>
+  <Step title="Add Context Comments">
+    Explain complex or non-obvious code decisions
+  </Step>
+</Steps>
+
+### For Reviewers
+
+<Steps>
+  <Step title="Start with Summary">
+    Get Righthand's overview before diving into code
+  </Step>
+  <Step title="Focus on High-Risk Areas">
+    Use Righthand's risk assessment to prioritize review time
+  </Step>
+  <Step title="Verify Automated Findings">
+    Check that critical issues identified by Righthand are addressed
+  </Step>
+  <Step title="Add Human Judgment">
+    Focus your review on design decisions, business logic, and maintainability
+  </Step>
+</Steps>
+
+### Review Efficiency Tips
+
+<Tip>
+**Time-saving approach**: Let Righthand handle syntax, style, and common issues. Focus your human review on architecture, design patterns, and business logic correctness.
+</Tip>
+
+## Integration with Development Workflow
+
+### GitHub/GitLab Integration
+
+Righthand can integrate with your PR workflow:
+
+<AccordionGroup>
+  <Accordion title="Automated PR Comments">
+    Post review findings as comments on the PR
+  </Accordion>
+  <Accordion title="Status Checks">
+    Block PRs with critical issues from merging
+  </Accordion>
+  <Accordion title="Review Requests">
+    Suggest appropriate reviewers based on code changes
+  </Accordion>
+  <Accordion title="Changelog Generation">
+    Automatically update CHANGELOG.md with PR summaries
+  </Accordion>
+</AccordionGroup>
+
+### Code Review Metrics
+
+Track review effectiveness over time:
+
+```text Example Queries
+"How many security issues were caught in review this month?"
+"What's the average time to first review for my PRs?"
+"Which files generate the most review comments?"
+"How has our code quality trend been over the last quarter?"
+```
+
+## Example Workflows
+
+<Accordion title="Full PR Review Cycle">
+**Scenario**: Complete code review from submission to merge
+
+1. **Author Pre-Submission**
+   - Complete feature implementation
+   - "Review my changes before I submit PR"
+   - Fix issues identified by Righthand
+   - "Generate PR description from my commits"
+   - Submit PR with generated description
+
+2. **Automated Review**
+   - Righthand automatically analyzes PR
+   - Posts preliminary findings as comments
+   - Tags specific reviewers based on code areas
+
+3. **Human Review**
+   - Reviewer: "Summarize PR #567 and highlight risks"
+   - Reviews code focusing on design and business logic
+   - Righthand assists with suggesting test cases
+   - Approves with comments
+
+4. **Post-Review**
+   - Author addresses feedback
+   - Righthand verifies all issues resolved
+   - PR merged
+   - Righthand updates changelog and documentation
+</Accordion>
+
+<Accordion title="Large Refactoring Review">
+**Scenario**: Reviewing a major code refactoring
+
+1. "Analyze the refactoring in PR #789 - 2,400 lines changed"
+
+2. Righthand provides:
+   - Component-by-component change summary
+   - Behavioral changes vs. pure refactoring
+   - Risk areas where bugs might hide
+   - Test coverage gaps
+
+3. Focus review on:
+   - High-risk behavioral changes
+   - Areas with insufficient tests
+   - Potential performance regressions
+
+4. "Compare performance before and after refactoring"
+   - Righthand analyzes algorithmic complexity
+   - Identifies any performance improvements or regressions
+</Accordion>
+
+## Code Quality Checks
+
+### Standard Checks
+
+- **Code Complexity**: Cyclomatic complexity, nesting depth, function length
+- **Code Duplication**: Identify repeated code blocks
+- **Naming Conventions**: Verify consistent naming patterns
+- **Documentation**: Check for missing docstrings or comments
+- **Error Handling**: Ensure proper error handling and logging
+
+### Language-Specific Checks
+
+<Tabs>
+  <Tab title="JavaScript/TypeScript">
+    - Proper use of async/await
+    - Type safety in TypeScript
+    - React hooks rules compliance
+    - Common anti-patterns
+  </Tab>
+  <Tab title="Python">
+    - PEP 8 compliance
+    - Type hints usage
+    - Generator vs. list comprehension
+    - Context manager usage
+  </Tab>
+  <Tab title="Java">
+    - Exception handling patterns
+    - Resource management
+    - Stream API usage
+    - Null safety
+  </Tab>
+  <Tab title="Go">
+    - Error handling idioms
+    - Goroutine leaks
+    - Interface usage
+    - Defer usage
+  </Tab>
+</Tabs>
+
+## Related Use Cases
+
+- [Documentation Generation](/employee-types/software-developer/documentation-generation) - Auto-generate docs from reviewed code
+- [Bug Triage](/employee-types/software-developer/bug-triage) - Connect review findings to bug prevention
+
+<Warning>
+Righthand provides automated analysis, but human judgment is essential for design decisions, business logic validation, and architectural considerations.
+</Warning>

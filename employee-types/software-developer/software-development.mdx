@@ -1,0 +1,738 @@
+---
+title: "Software Development"
+description: "Righthands work on features and bug fixes through Linear or Jira issues, delivering pull requests for review"
+icon: "code-branch"
+---
+
+## Overview
+
+The most common workflow for Righthands as software developers is issue-driven development. You assign a Linear or Jira issue to your Righthand, and it handles the complete development cycle from implementation through pull request submission.
+
+## Recommended Workflow
+
+<Steps>
+  <Step title="Create or Assign Issue">
+    Create a detailed issue in Linear or Jira with:
+    - Clear description of the feature or bug
+    - Acceptance criteria
+    - Any relevant context or constraints
+    - Links to related issues or documentation
+  </Step>
+
+  <Step title="Assign to Righthand">
+    Text or email your Righthand with the issue reference:
+
+    ```text Example
+    "Please work on Linear issue ENG-234"
+    ```
+
+    or
+
+    ```text Example
+    "Implement the feature described in JIRA-1523 and submit a PR to the dev branch"
+    ```
+  </Step>
+
+  <Step title="Righthand Works on Issue">
+    The Righthand will:
+    - Read the full issue details and context
+    - Analyze the codebase to understand what needs to change
+    - Create a feature branch (or work on specified branch)
+    - Implement the requirements
+    - Write tests for the new functionality
+    - Update documentation if needed
+    - Commit changes with clear commit messages
+  </Step>
+
+  <Step title="Pull Request Submission">
+    When complete, the Righthand:
+    - Creates a pull request to your development branch
+    - Links the PR to the original issue
+    - Includes a comprehensive PR description
+    - Notifies you that the work is ready for review
+  </Step>
+
+  <Step title="Review and Iterate">
+    Review the pull request:
+    - Check code quality and implementation approach
+    - Test the functionality
+    - Leave comments on any changes needed
+    - Ask the Righthand to address feedback: "Please respond to comments on PR #456"
+  </Step>
+
+  <Step title="Merge and Close">
+    Once approved:
+    - Merge the pull request
+    - The Linear/Jira issue automatically updates or closes
+    - Righthand is available for the next assignment
+  </Step>
+</Steps>
+
+## Why Issue-Driven Development Works Best
+
+<CardGroup cols={2}>
+  <Card title="Clear Scope" icon="bullseye">
+    Issues provide well-defined boundaries for what needs to be built
+  </Card>
+  <Card title="Better Context" icon="book-open">
+    Issues contain acceptance criteria, design decisions, and discussion history
+  </Card>
+  <Card title="Tracking" icon="list-check">
+    Easy to track what the Righthand is working on and what's completed
+  </Card>
+  <Card title="Collaboration" icon="users">
+    Team can discuss requirements in the issue before implementation
+  </Card>
+</CardGroup>
+
+## Best Practices for Issue Creation
+
+### Write Clear Issues
+
+Your Righthand performs best with well-structured issues:
+
+<AccordionGroup>
+  <Accordion title="Detailed Description">
+    Explain what needs to be built and why:
+
+    ```markdown Good Example
+    ## Description
+    Users need the ability to export their dashboard data as CSV files.
+    Currently they can only view data on screen, which makes it hard
+    to analyze in external tools.
+
+    ## Requirements
+    - Add "Export to CSV" button on dashboard
+    - Include all visible data columns
+    - Preserve current filters and date ranges
+    - Show download progress for large exports
+    ```
+  </Accordion>
+
+  <Accordion title="Clear Acceptance Criteria">
+    Define exactly what "done" means:
+
+    ```markdown Example Acceptance Criteria
+    - [ ] CSV export button appears in dashboard toolbar
+    - [ ] Export includes all columns shown in current view
+    - [ ] File downloads with name format: dashboard_export_YYYY-MM-DD.csv
+    - [ ] Progress indicator shows during export
+    - [ ] Exports work for datasets up to 100,000 rows
+    - [ ] Tests added for export functionality
+    ```
+  </Accordion>
+
+  <Accordion title="Provide Context">
+    Link to related information:
+    - Related issues or PRs
+    - Design mockups or specifications
+    - API documentation
+    - Similar features in the codebase
+    - Any constraints or requirements
+  </Accordion>
+
+  <Accordion title="Specify Technical Approach (Optional)">
+    If you have preferences on implementation:
+
+    ```markdown Example
+    ## Technical Approach
+    - Use the existing `DataExporter` service
+    - Add new endpoint: GET /api/dashboard/export
+    - Use streaming for large datasets to avoid memory issues
+    - Follow the pattern from the report export feature
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Common Workflows
+
+### Feature Development
+
+<CodeGroup>
+```text Request to Righthand
+"Please implement Linear issue ENG-567: Add password reset functionality"
+```
+
+```text Righthand Process
+1. Reading issue ENG-567...
+   - Feature: Password reset via email
+   - Acceptance criteria: 6 items
+   - Related issues: Links to authentication system docs
+
+2. Analyzing codebase...
+   - Found existing auth module at src/auth/
+   - Email service available at src/services/email/
+   - Following patterns from existing auth flows
+
+3. Creating feature branch: feature/password-reset-ENG-567
+
+4. Implementing changes...
+   - Created password reset endpoint
+   - Added email template for reset link
+   - Implemented token generation and validation
+   - Added rate limiting
+   - Wrote unit tests (12 tests)
+   - Updated API documentation
+
+5. Creating pull request...
+   - PR #892 created: "Add password reset functionality (ENG-567)"
+   - Target branch: dev
+   - Status: Ready for review
+
+Pull request is ready. I've linked it to issue ENG-567 in Linear.
+```
+</CodeGroup>
+
+### Bug Fix
+
+<CodeGroup>
+```text Request to Righthand
+"Fix the bug in JIRA-2341 and create a PR to main"
+```
+
+```text Righthand Process
+1. Reading JIRA-2341...
+   - Bug: User profile images not loading on mobile
+   - Reproduction steps provided
+   - Affecting iOS Safari users
+
+2. Investigating root cause...
+   - Issue in image URL generation for mobile viewports
+   - CSS problem with responsive image sizing
+   - Missing error handling for failed image loads
+
+3. Creating branch: bugfix/mobile-profile-images-JIRA-2341
+
+4. Implementing fix...
+   - Fixed image URL generation logic
+   - Updated responsive CSS
+   - Added error handling and fallback image
+   - Added regression tests
+   - Tested on iOS Safari simulator
+
+5. Pull request created...
+   - PR #893: "Fix profile image loading on mobile (JIRA-2341)"
+   - Target: main
+   - Includes before/after screenshots
+
+Ready for review. This fix also resolves duplicate issue JIRA-2298.
+```
+</CodeGroup>
+
+### Collaborative Planning + Implementation
+
+Work with your Righthand to plan and execute:
+
+<Steps>
+  <Step title="Initial Discussion">
+    "I need to add a feature for bulk user imports. Let's plan this together."
+  </Step>
+
+  <Step title="Righthand Creates Draft Issue">
+    Righthand drafts a Linear issue with:
+    - Proposed implementation approach
+    - Technical considerations
+    - Estimated complexity
+    - Potential risks
+  </Step>
+
+  <Step title="Refine Together">
+    Review and discuss:
+    - Adjust requirements
+    - Clarify acceptance criteria
+    - Add constraints or preferences
+    - Finalize the issue
+  </Step>
+
+  <Step title="Implementation">
+    "Go ahead and implement this issue"
+
+    Righthand builds the feature following the agreed plan
+  </Step>
+
+  <Step title="Review">
+    Review PR and iterate as needed
+  </Step>
+</Steps>
+
+## Branch and PR Strategy
+
+### Default Branch Targets
+
+Configure where PRs should go by default:
+
+| Development Stage | Target Branch | Use Case |
+|-------------------|---------------|----------|
+| **Development** | `dev` or `develop` | Features under active development |
+| **Staging** | `staging` | Features ready for QA testing |
+| **Production** | `main` or `master` | Hotfixes and releases |
+| **Feature Branch** | Specific branch | Long-running features |
+
+<Tip>
+Specify your default: "Always create PRs targeting the dev branch unless I specify otherwise"
+</Tip>
+
+### Working Across Multiple Branches
+
+Your Righthand can work on different branches simultaneously:
+
+```text Example
+Morning: "Work on feature/user-auth in the main project"
+Afternoon: "Switch to the dev branch and fix bug ENG-789"
+```
+
+The Righthand maintains context for each branch and can switch between them.
+
+## Integration with Project Management Tools
+
+### Linear Integration
+
+<AccordionGroup>
+  <Accordion title="Automatic Issue Linking">
+    When you reference a Linear issue, the Righthand:
+    - Fetches full issue details
+    - Links the PR to the issue
+    - Updates issue status when PR is merged
+    - Adds PR link to issue comments
+  </Accordion>
+
+  <Accordion title="Status Synchronization">
+    Issue status updates automatically:
+    - Branch created → "In Progress"
+    - PR opened → "In Review"
+    - PR merged → "Done" or "Completed"
+  </Accordion>
+
+  <Accordion title="Issue Comments">
+    Righthand can:
+    - Add implementation notes to issues
+    - Ask clarifying questions
+    - Update with progress reports
+    - Document technical decisions
+  </Accordion>
+</AccordionGroup>
+
+### Jira Integration
+
+Similar capabilities with Jira:
+- Read Jira issue details and attachments
+- Link PRs to Jira tickets
+- Update Jira status based on PR state
+- Add work logs and comments
+
+## Communication Methods
+
+### Text/Email Commands
+
+Simple text or email messages work well:
+
+```text Examples
+"Work on ENG-234"
+"Fix the bug in JIRA-1523 and submit to dev"
+"Implement the feature in issue #456"
+"Create a PR for this issue: [Linear link]"
+```
+
+### Detailed Instructions
+
+For complex work, provide more context:
+
+```text Example
+"Please work on Linear issue ENG-890. This is a customer-reported issue
+so it's high priority. Make sure to add comprehensive error handling
+and include integration tests. Create the PR to the release-2.4 branch
+since we need this in the next release."
+```
+
+### Follow-up Communication
+
+Track progress and provide guidance:
+
+```text Examples
+"What's the status on ENG-234?"
+"Are you blocked on anything for JIRA-1523?"
+"The approach in PR #456 looks good, but can you also add logging?"
+```
+
+## Example Development Cycles
+
+### Simple Feature (1-2 days)
+
+<Accordion title="Add API Rate Limiting">
+**Day 1 - Morning**
+- You: "Implement Linear issue ENG-901: Add rate limiting to API"
+- Righthand: Reads issue, analyzes codebase, starts implementation
+
+**Day 1 - Afternoon**
+- Righthand: Creates PR #567 with rate limiting implementation
+- You: Review PR, request adding configuration for rate limits
+
+**Day 2 - Morning**
+- You: "Please address the review comments on PR #567"
+- Righthand: Adds configuration support, updates tests
+
+**Day 2 - Afternoon**
+- You: Approve and merge PR
+- Linear issue ENG-901 automatically marked as Done
+</Accordion>
+
+### Complex Feature (1-2 weeks)
+
+<Accordion title="User Authentication System">
+**Week 1**
+- Collaborative planning session to create detailed Linear issues
+- Break into smaller issues: ENG-601, ENG-602, ENG-603, ENG-604
+- Righthand works through issues sequentially or in parallel
+- Daily PR submissions for review
+
+**Week 2**
+- Address review feedback
+- Integration testing
+- Documentation updates
+- Final PR review and merge
+- All related Linear issues close automatically
+</Accordion>
+
+### Urgent Bug Fix (same day)
+
+<Accordion title="Production Hotfix">
+**10:00 AM** - Production bug reported
+- Create JIRA-critical-789 with reproduction steps
+
+**10:15 AM**
+- "This is urgent. Please fix JIRA-critical-789 and submit PR to main"
+
+**11:30 AM**
+- Righthand submits PR #999 with fix and tests
+- You fast-track review
+
+**12:00 PM**
+- Approve, merge, deploy to production
+- Bug resolved
+</Accordion>
+
+## Monitoring Your Righthand's Work
+
+### Progress Updates
+
+Check on ongoing work:
+
+```text Status Queries
+"What are you currently working on?"
+"How's progress on ENG-234?"
+"When do you expect to finish JIRA-1523?"
+"Are there any blockers I should know about?"
+```
+
+### Work Queue
+
+Manage multiple assignments:
+
+```text Queue Management
+"What's in your queue?"
+"Prioritize ENG-456 over ENG-457"
+"Pause work on JIRA-1523 and focus on ENG-789 first"
+"What's the status of all my assigned issues?"
+```
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="One Issue at a Time" icon="focus">
+    For best results, have Righthand focus on one issue until PR is submitted
+  </Card>
+  <Card title="Detailed Issues" icon="file-lines">
+    Well-written issues lead to better implementations
+  </Card>
+  <Card title="Review Promptly" icon="clock">
+    Review PRs quickly so Righthand can address feedback while context is fresh
+  </Card>
+  <Card title="Clear Feedback" icon="comments">
+    Provide specific, actionable feedback in PR reviews
+  </Card>
+</CardGroup>
+
+## When to Use Issue-Driven Development
+
+<AccordionGroup>
+  <Accordion title="New Features">
+    **Always use issues** for new features:
+    - Provides clear requirements
+    - Allows team discussion before implementation
+    - Creates documentation trail
+    - Enables proper estimation and planning
+  </Accordion>
+
+  <Accordion title="Bug Fixes">
+    **Use issues for non-trivial bugs:**
+    - Documents reproduction steps
+    - Tracks investigation progress
+    - Links to related bugs
+    - Quick fixes can be done without formal issues
+  </Accordion>
+
+  <Accordion title="Refactoring">
+    **Use issues to scope refactoring:**
+    - Define what code will change
+    - Explain why refactoring is needed
+    - Set boundaries to prevent scope creep
+    - Track before/after metrics
+  </Accordion>
+
+  <Accordion title="Technical Debt">
+    **Use issues to prioritize tech debt:**
+    - Document the debt and its impact
+    - Plan remediation approach
+    - Schedule work in sprints
+    - Measure improvement
+  </Accordion>
+</AccordionGroup>
+
+## Issue Template Recommendations
+
+### Feature Issue Template
+
+```markdown
+## Description
+[What feature needs to be built and why]
+
+## User Story
+As a [user type], I want [goal] so that [benefit]
+
+## Acceptance Criteria
+- [ ] [Specific testable criterion]
+- [ ] [Another criterion]
+- [ ] Tests added
+- [ ] Documentation updated
+
+## Technical Notes
+[Any technical constraints, preferred approaches, or relevant context]
+
+## Related Issues
+[Links to related issues or dependencies]
+```
+
+### Bug Issue Template
+
+```markdown
+## Bug Description
+[Clear description of the bug]
+
+## Reproduction Steps
+1. [First step]
+2. [Second step]
+3. [What happens]
+
+## Expected Behavior
+[What should happen]
+
+## Actual Behavior
+[What actually happens]
+
+## Environment
+- Browser/Platform:
+- Version:
+- User type:
+
+## Logs/Screenshots
+[Error logs, stack traces, or screenshots]
+
+## Impact
+[How many users affected, severity level]
+```
+
+## Multi-Issue Projects
+
+For larger projects spanning multiple issues:
+
+<Steps>
+  <Step title="Break Down the Epic">
+    Create an Epic in Linear with sub-issues:
+    - ENG-100: Database schema
+    - ENG-101: API endpoints
+    - ENG-102: Frontend components
+    - ENG-103: Integration tests
+  </Step>
+
+  <Step title="Assign Issues Sequentially">
+    "Work on ENG-100 first, then ENG-101"
+
+    Or assign all at once:
+    "Work through issues ENG-100 through ENG-103 in order"
+  </Step>
+
+  <Step title="Review Each PR">
+    Review and merge each PR before Righthand moves to the next issue
+  </Step>
+
+  <Step title="Track Progress">
+    Monitor the Epic in Linear to see overall progress
+  </Step>
+</Steps>
+
+## Communication Examples
+
+### Simple Assignment
+
+```text
+"Work on ENG-789"
+```
+
+### With Branch Specification
+
+```text
+"Implement JIRA-456 and create a PR to the release-2.5 branch"
+```
+
+### With Priority Context
+
+```text
+"ENG-890 is urgent - customer-reported bug affecting production.
+Please prioritize this and submit a hotfix PR to main."
+```
+
+### With Implementation Guidance
+
+```text
+"Work on ENG-345. For the database changes, please create a migration
+script and follow the pattern we used in PR #234. Make sure to add
+both unit and integration tests."
+```
+
+### With Multiple Issues
+
+```text
+"Please work on these issues in order:
+1. ENG-567 (bug fix - high priority)
+2. ENG-568 (feature - can wait until bug is fixed)
+3. ENG-569 (documentation update)"
+```
+
+## Handling Review Feedback
+
+When you leave comments on a PR, direct the Righthand to address them:
+
+<CodeGroup>
+```text Your Review Comments on PR #456
+Line 45: "This function is too complex. Can you break it into smaller functions?"
+Line 78: "Add error handling for the API call"
+Line 120: "Use the existing logger instead of console.log"
+General: "Can you add a few more test cases for edge cases?"
+```
+
+```text Your Message to Righthand
+"Please address all the review comments on PR #456"
+```
+
+```text Righthand Response
+I've pushed new commits addressing your feedback:
+
+- Refactored complex function into 3 smaller helper functions
+- Added try/catch with proper error handling for API call
+- Replaced console.log with logger.error()
+- Added 5 additional test cases for edge cases
+
+PR is updated and ready for another review.
+```
+</CodeGroup>
+
+## Advanced Workflows
+
+### Parallel Development
+
+Have Righthand work on multiple non-conflicting issues:
+
+```text Example
+"You can work on ENG-234 and ENG-235 in parallel since they
+touch different parts of the codebase"
+```
+
+### Incremental PRs
+
+For large features, request incremental PRs:
+
+```text Example
+"Break ENG-456 into smaller PRs:
+1. First PR: Database schema changes
+2. Second PR: API layer
+3. Third PR: Frontend integration
+
+This makes review easier."
+```
+
+### Research and Implementation
+
+For technical unknowns:
+
+```text Example
+"Research the best approach for ENG-678 (real-time notifications).
+Compare WebSockets vs Server-Sent Events vs polling.
+Recommend an approach, then implement it."
+```
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Righthand Asks Clarifying Questions">
+    If the issue lacks clarity, Righthand may ask:
+    - "Should the export include archived items?"
+    - "What format should the date column use?"
+    - "Should this work for guest users too?"
+
+    Provide answers to unblock the work.
+  </Accordion>
+
+  <Accordion title="PR Doesn't Meet Expectations">
+    If the implementation misses the mark:
+    1. Leave specific feedback in PR comments
+    2. "Please address the review comments on PR #X"
+    3. Righthand revises the approach
+    4. Iterate until correct
+
+    Or: "Let's take a different approach. Close this PR and I'll update the Linear issue with a new technical direction."
+  </Accordion>
+
+  <Accordion title="Issue is Blocked">
+    If Righthand identifies a blocker:
+    - "I need API credentials for the third-party service"
+    - "This depends on ENG-123 being merged first"
+    - "The database schema needs to be updated first"
+
+    Resolve the blocker, then: "You can continue now"
+  </Accordion>
+</AccordionGroup>
+
+## Metrics and Productivity
+
+Track your Righthand's development productivity:
+
+### Useful Metrics
+
+- **Issues completed per week**: Track velocity
+- **Average time from assignment to PR**: Measure efficiency
+- **PR review cycles**: Monitor how many rounds of feedback needed
+- **Test coverage**: Ensure quality standards met
+- **Bug introduction rate**: Monitor code quality
+
+### Performance Questions
+
+```text Example Queries
+"How many issues did you complete this week?"
+"What's your average time to complete a feature issue?"
+"Show me all PRs you've created in the last month"
+"What's your test coverage across recent PRs?"
+```
+
+## Related Use Cases
+
+- [Code Review](/employee-types/software-developer/code-review-assistance) - Righthands can also review other developers' code
+- [Bug Triage](/employee-types/software-developer/bug-triage) - Analysis before creating bug fix issues
+- [Sprint Planning](/employee-types/software-developer/sprint-planning) - Planning which issues to assign
+
+<Info>
+The issue-driven workflow is the most effective way to work with a Righthand developer. It provides structure, clarity, and enables productive collaboration.
+</Info>
+
+<Warning>
+Always review PRs before merging, even from your Righthand. Code review is essential for maintaining quality and catching issues.
+</Warning>

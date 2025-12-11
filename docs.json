@@ -12,46 +12,72 @@
   },
   "favicon": "/favicon.png",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
+        "group": "Example Uses",
+        "pages": [
           {
-            "group": "Legal",
+            "group": "Executive Assistant",
             "pages": [
-              {
-                "group": "Terms of Service",
-                "pages": [
-                  "legal/terms-of-service/platform-terms-of-service",
-                  "legal/terms-of-service/user-terms-of-service"
-                ]
-              },
-              "legal/privacy-policy"
+              "employee-types/executive-assistant/getting-started",
+              "employee-types/executive-assistant/calendar-management",
+              "employee-types/executive-assistant/email-triage",
+              "employee-types/executive-assistant/meeting-coordination",
+              "employee-types/executive-assistant/expense-tracking"
+            ]
+          },
+          {
+            "group": "Software Developer",
+            "pages": [
+              "employee-types/software-developer/getting-started",
+              "employee-types/software-developer/software-development",
+              "employee-types/software-developer/code-review-assistance",
+              "employee-types/software-developer/documentation-generation",
+              "employee-types/software-developer/bug-triage",
+              "employee-types/software-developer/sprint-planning"
             ]
           }
         ]
+      },
+      {
+        "group": "FAQs",
+        "pages": [
+          "faqs/assistant-information",
+          "faqs/data-used-to-train"
+        ]
+      },
+      {
+        "group": "Legal",
+        "pages": [
+          {
+            "group": "Terms of Service",
+            "pages": [
+              "legal/terms-of-service/platform-terms-of-service",
+              "legal/terms-of-service/user-terms-of-service"
+            ]
+          },
+          "legal/privacy-policy"
+        ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Signup",
-          "href": "https://www.righthand.ai",
-          "icon": "arrow-up-right"
-        },
-        {
-          "anchor": "Support",
-          "href": "mailto:support@humans.righthand.ai",
-          "icon": "envelope"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://enterprise.righthand.ai/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
+  "anchors": [
+    {
+      "name": "Signup",
+      "url": "https://www.righthand.ai",
+      "icon": "arrow-up-right"
+    },
+    {
+      "name": "Support",
+      "url": "mailto:support@humans.righthand.ai",
+      "icon": "envelope"
+    },
+    {
+      "name": "Blog",
+      "url": "https://enterprise.righthand.ai/blog",
+      "icon": "newspaper"
+    }
+  ],
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
