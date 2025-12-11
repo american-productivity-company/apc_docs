@@ -11,6 +11,9 @@
     "family": "Manrope"
   },
   "favicon": "/favicon.png",
+  "contextual": {
+    "options": ["copy", "view", "chatgpt", "claude"]
+  },
   "navigation": {
     "groups": [
       {
