@@ -43,6 +43,12 @@
         ]
       },
       {
+        "group": "Troubleshooting",
+        "pages": [
+          "troubleshooting/passphrase-authentication"
+        ]
+      },
+      {
         "group": "FAQs",
         "pages": [
           "faqs/assistant-information",
