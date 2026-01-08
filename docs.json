@@ -26,7 +26,8 @@
               "employee-types/executive-assistant/calendar-management",
               "employee-types/executive-assistant/email-triage",
               "employee-types/executive-assistant/meeting-coordination",
-              "employee-types/executive-assistant/expense-tracking"
+              "employee-types/executive-assistant/expense-tracking",
+              "employee-types/executive-assistant/phone-screening"
             ]
           },
           {
