@@ -40,6 +40,16 @@
               "employee-types/software-developer/bug-triage",
               "employee-types/software-developer/sprint-planning"
             ]
+          },
+          {
+            "group": "Sales Lead",
+            "pages": [
+              "employee-types/sales-lead/getting-started",
+              "employee-types/sales-lead/lead-qualification",
+              "employee-types/sales-lead/outreach-campaigns",
+              "employee-types/sales-lead/meeting-preparation",
+              "employee-types/sales-lead/pipeline-management"
+            ]
           }
         ]
       },
@@ -74,7 +84,7 @@
   "anchors": [
     {
       "name": "Signup",
-      "url": "https://www.righthand.ai",
+      "url": "https://teams.righthand.ai",
       "icon": "arrow-up-right"
     },
     {
@@ -102,7 +112,7 @@
     "primary": {
       "type": "button",
       "label": "Signup",
-      "href": "https://www.righthand.ai"
+      "href": "https://teams.righthand.ai"
     }
   },
   "footer": {
