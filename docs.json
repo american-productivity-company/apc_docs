@@ -17,53 +17,28 @@
   "navigation": {
     "groups": [
       {
-        "group": "Example Uses",
+        "group": "Getting Started",
         "pages": [
-          {
-            "group": "Executive Assistant",
-            "pages": [
-              "employee-types/executive-assistant/getting-started",
-              "employee-types/executive-assistant/calendar-management",
-              "employee-types/executive-assistant/email-triage",
-              "employee-types/executive-assistant/meeting-coordination",
-              "employee-types/executive-assistant/expense-tracking",
-              "employee-types/executive-assistant/phone-screening"
-            ]
-          },
-          {
-            "group": "Software Developer",
-            "pages": [
-              "employee-types/software-developer/getting-started",
-              "employee-types/software-developer/software-development",
-              "employee-types/software-developer/code-review-assistance",
-              "employee-types/software-developer/documentation-generation",
-              "employee-types/software-developer/bug-triage",
-              "employee-types/software-developer/sprint-planning"
-            ]
-          },
-          {
-            "group": "Sales Lead",
-            "pages": [
-              "employee-types/sales-lead/getting-started",
-              "employee-types/sales-lead/lead-qualification",
-              "employee-types/sales-lead/outreach-campaigns",
-              "employee-types/sales-lead/meeting-preparation",
-              "employee-types/sales-lead/pipeline-management"
-            ]
-          }
+          "introduction",
+          "guides/create-your-first-righthand",
+          "guides/adding-your-first-connection"
         ]
       },
       {
-        "group": "Troubleshooting",
+        "group": "Connections",
         "pages": [
-          "troubleshooting/passphrase-authentication"
+          "guides/connection-types",
+          "guides/add-a-connection",
+          "guides/setting-up-accounts"
         ]
       },
       {
-        "group": "FAQs",
+        "group": "Configuration",
         "pages": [
-          "faqs/assistant-information",
-          "faqs/data-used-to-train"
+          "guides/external-comms-permissions",
+          "guides/call-forwarding",
+          "guides/usage-limits",
+          "guides/unified-billing"
         ]
       },
       {
