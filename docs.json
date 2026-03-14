@@ -3,9 +3,9 @@
   "theme": "palm",
   "name": "Righthand Docs",
   "colors": {
-    "primary": "#D35A47",
-    "light": "#E68B7F",
-    "dark": "#A63F33"
+    "primary": "#d2553f",
+    "light": "#ff9b7d",
+    "dark": "#c94a36"
   },
   "fonts": {
     "family": "Manrope"
@@ -92,8 +92,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/makecloudpeople",
-      "linkedin": "https://www.linkedin.com/company/righthand-ai/about/",
+      "x": "https://x.com/righthanddotai",
+      "linkedin": "https://www.linkedin.com/company/righthanddotai/",
       "website": "https://www.righthand.ai"
     }
   }
