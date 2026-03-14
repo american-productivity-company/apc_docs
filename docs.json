@@ -21,7 +21,9 @@
         "pages": [
           "introduction",
           "guides/create-your-first-righthand",
-          "guides/adding-your-first-connection"
+          "guides/adding-your-first-connection",
+          "guides/setting-up-slack",
+          "guides/adding-a-custom-domain"
         ]
       },
       {
@@ -33,12 +35,12 @@
         ]
       },
       {
-        "group": "Configuration",
+        "group": "Security",
         "pages": [
-          "guides/external-comms-permissions",
-          "guides/call-forwarding",
-          "guides/usage-limits",
-          "guides/unified-billing"
+          "security/overview",
+          "security/connection-security",
+          "security/external-communications",
+          "security/voice-authentication"
         ]
       },
       {
