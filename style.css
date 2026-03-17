@@ -1,0 +1,35 @@
+/* APC Neo-Brutalist overrides */
+
+/* Sharp corners throughout */
+* {
+  border-radius: 0 !important;
+}
+
+/* Brand color variables */
+:root {
+  --color-sunset-coral: #d2553f;
+  --color-warm-peach: #ff9b7d;
+  --color-burnt-sienna: #c94a36;
+  --color-cream-light: #fff8f3;
+  --color-warm-sand: #d4a574;
+  --color-rich-brown: #6b3825;
+  --color-brown-light: #8f6047;
+  --color-rich-brown-70: rgba(107, 56, 37, 0.7);
+  --color-rich-brown-45: rgba(107, 56, 37, 0.45);
+  --color-rich-brown-16: rgba(107, 56, 37, 0.16);
+  --color-coral-12: rgba(210, 85, 63, 0.12);
+  --color-coral-wash: rgba(210, 85, 63, 0.18);
+}
+
+/* Light mode */
+body {
+  background-color: var(--color-cream-light);
+  color: var(--color-rich-brown);
+}
+
+/* Dark mode */
+.dark body,
+[data-theme="dark"] body {
+  background-color: var(--color-rich-brown);
+  color: var(--color-cream-light);
+}

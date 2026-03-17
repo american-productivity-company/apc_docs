@@ -1,0 +1,67 @@
+---
+title: "Setting Up Accounts for Righthands"
+description: "Create dedicated accounts that your Righthands own and use themselves"
+icon: "user-gear"
+---
+
+## Overview
+
+Some tools work best when your Righthand has their own dedicated account — just like a human employee would. For example, you might create a GitHub account for a Righthand Software Engineer, or a HubSpot account for a Righthand SDR.
+
+For certain services, like Resy, your Righthand is capable of creating an account on their own. But for most, you'll need to set it up manually and then connect it.
+
+## Prerequisites
+
+- You must be a **manager** of the Righthand you're creating the account for
+
+## Creating an Account for Your Righthand
+
+<Steps>
+  <Step title="Go to the Righthand's detail page">
+    Navigate to the [Team page](https://teams.righthand.ai/teams/people) and click on the Righthand you want to create an account for. Take note of their **email address** and **phone number** — you'll need these in the next steps.
+  </Step>
+  <Step title="Sign up for the service">
+    Go to the service you want to create an account on (e.g., github.com) and begin the sign-up process. Use the Righthand's email address or phone number from Step 1 as the account credentials.
+  </Step>
+  <Step title="Find the verification email or text">
+    Back on the Righthand's detail page, click the **Threads** tab (next to "Overview"). Look for the sign-up verification email or text from the service.
+
+    <Frame>
+      <img src="/images/accounts/threads-verification.png" alt="Threads tab showing a sign-up verification email" />
+    </Frame>
+  </Step>
+  <Step title="Activate the account">
+    Copy the verification code or link from the thread and open it in your browser to complete the account activation.
+  </Step>
+  <Step title="Handle MFA (optional)">
+    If the service requires multi-factor authentication, we recommend using **text message verification** with the Righthand's phone number. After triggering the MFA prompt:
+
+    1. Go back to the **Threads** tab on the Righthand's detail page
+    2. Reload the page
+    3. Find and copy the 2FA code from the incoming text
+
+    <Warning>
+      If the service doesn't support SMS-based MFA, you'll need to store the MFA codes separately. Support for adding MFA codes directly to a Righthand is coming soon.
+    </Warning>
+  </Step>
+  <Step title="Connect the account">
+    Navigate to the [Add More](https://teams.righthand.ai/connections/add-more) page and search for the service you just signed up for. Click on it and complete the OAuth flow to link the account.
+
+    If the service doesn't appear in the connection list, refer to [Connection Types](/guides/connection-types) for how to add it as a credentials-based connection instead.
+
+    <Frame>
+      <img src="/images/accounts/add-connection.png" alt="Searching for and selecting a connection on the Add More page" />
+    </Frame>
+  </Step>
+  <Step title="Set the scope to Righthand">
+    Once connected, set the **Connection Scope** to **Righthand** and assign it to the relevant Righthand. This ensures the account is recognized as belonging to that specific Righthand.
+
+    <Frame>
+      <img src="/images/accounts/set-righthand-scope.png" alt="Setting the connection scope to Righthand" />
+    </Frame>
+  </Step>
+</Steps>
+
+<Info>
+  Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
+</Info>

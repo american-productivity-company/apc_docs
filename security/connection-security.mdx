@@ -1,0 +1,59 @@
+---
+title: "Connection Security"
+description: "How your connections and credentials are protected"
+icon: "lock"
+---
+
+## Overview
+
+When you connect a tool or service to Righthand, your credentials and data are protected at every layer. All connection data is **encrypted at rest** and **in transit**, and you have full control over who can access each connection and what they can do with it.
+
+## How Connections Are Secured
+
+### Encryption
+
+All credentials — including OAuth tokens, API keys, and passwords — are encrypted at rest using industry-standard encryption. Data in transit between your browser, the Righthand platform, and connected services is always encrypted over TLS.
+
+### OAuth by Default
+
+Righthand uses [OAuth](/guides/connection-types#oauth-recommended) as the default connection method wherever possible. OAuth means your password is never shared with or stored by Righthand — instead, the service issues a scoped access token that can be revoked at any time.
+
+## Access Controls
+
+Every connection has three layers of control that let you decide exactly who can use it and how.
+
+### Connection Scope
+
+The scope determines who owns the connection:
+
+- **Personal** — The connection belongs to you. Only you can assign or remove it from a Righthand.
+- **Righthand** — The connection was created specifically for a single Righthand and is meant to be used by that Righthand alone.
+- **Team** — A shared connection accessible to the whole team. Any team member can assign it to their Righthands.
+
+### Righthand Access
+
+You control which Righthands on your team have access to each connection. A connection can be shared with multiple Righthands or restricted to just one.
+
+### Tool Permissions
+
+For OAuth connections, each tool within the integration has its own permission level:
+
+| Permission | Behavior |
+|------------|----------|
+| **Yes** | The Righthand can use this tool freely without asking. |
+| **Ask** | The Righthand will request approval from a manager before using this tool. |
+| **No** | The Righthand cannot use this tool at all. |
+
+This gives you granular control — for example, you might allow a Righthand to read emails but require approval before sending them.
+
+<Tip>
+  For a full walkthrough of configuring these settings, see [Connection Permissions](/guides/add-a-connection).
+</Tip>
+
+## Revoking Access
+
+You can deactivate or remove any connection at any time from the [Connections](https://teams.righthand.ai/connections) page. Removing a connection immediately revokes the Righthand's access to that service.
+
+<Info>
+  Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
+</Info>

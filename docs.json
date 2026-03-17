@@ -3,9 +3,9 @@
   "theme": "palm",
   "name": "Righthand Docs",
   "colors": {
-    "primary": "#D35A47",
-    "light": "#E68B7F",
-    "dark": "#A63F33"
+    "primary": "#d2553f",
+    "light": "#ff9b7d",
+    "dark": "#c94a36"
   },
   "fonts": {
     "family": "Manrope"
@@ -17,43 +17,30 @@
   "navigation": {
     "groups": [
       {
-        "group": "Example Uses",
+        "group": "Getting Started",
         "pages": [
-          {
-            "group": "Executive Assistant",
-            "pages": [
-              "employee-types/executive-assistant/getting-started",
-              "employee-types/executive-assistant/calendar-management",
-              "employee-types/executive-assistant/email-triage",
-              "employee-types/executive-assistant/meeting-coordination",
-              "employee-types/executive-assistant/expense-tracking",
-              "employee-types/executive-assistant/phone-screening"
-            ]
-          },
-          {
-            "group": "Software Developer",
-            "pages": [
-              "employee-types/software-developer/getting-started",
-              "employee-types/software-developer/software-development",
-              "employee-types/software-developer/code-review-assistance",
-              "employee-types/software-developer/documentation-generation",
-              "employee-types/software-developer/bug-triage",
-              "employee-types/software-developer/sprint-planning"
-            ]
-          }
+          "introduction",
+          "guides/create-your-first-righthand",
+          "guides/adding-your-first-connection",
+          "guides/setting-up-slack",
+          "guides/adding-a-custom-domain"
         ]
       },
       {
-        "group": "Troubleshooting",
+        "group": "Connections",
         "pages": [
-          "troubleshooting/passphrase-authentication"
+          "guides/connection-types",
+          "guides/add-a-connection",
+          "guides/setting-up-accounts"
         ]
       },
       {
-        "group": "FAQs",
+        "group": "Security",
         "pages": [
-          "faqs/assistant-information",
-          "faqs/data-used-to-train"
+          "security/overview",
+          "security/connection-security",
+          "security/external-communications",
+          "security/voice-authentication"
         ]
       },
       {
@@ -74,7 +61,7 @@
   "anchors": [
     {
       "name": "Signup",
-      "url": "https://www.righthand.ai",
+      "url": "https://teams.righthand.ai",
       "icon": "arrow-up-right"
     },
     {
@@ -102,13 +89,13 @@
     "primary": {
       "type": "button",
       "label": "Signup",
-      "href": "https://www.righthand.ai"
+      "href": "https://teams.righthand.ai"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/makecloudpeople",
-      "linkedin": "https://www.linkedin.com/company/righthand-ai/about/",
+      "x": "https://x.com/righthanddotai",
+      "linkedin": "https://www.linkedin.com/company/righthanddotai/",
       "website": "https://www.righthand.ai"
     }
   }
