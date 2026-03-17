@@ -1,60 +1,69 @@
 ---
 title: "Setting Up Accounts for Righthands"
-description: "Learn how to provision and configure accounts your Righthands need to operate"
+description: "Create dedicated accounts that your Righthands own and use themselves"
 icon: "user-gear"
 ---
 
 ## Overview
 
-{/* Brief intro: explain that Righthands may need their own accounts or access credentials for various services to function effectively */}
+Some tools work best when your Righthand has their own dedicated account — just like a human employee would. For example, you might create a GitHub account for a Righthand Software Engineer, or a HubSpot account for a Righthand SDR.
 
-## When Does a Righthand Need Its Own Account?
+For certain services, like Resy, your Righthand is capable of creating an account on their own. But for most, you'll need to set it up manually and then connect it.
 
-{/* Explain scenarios where a dedicated account is needed vs. using the user's own account via connections */}
+## Prerequisites
 
-## Setting Up Service Accounts
+- You must be a **manager** of the Righthand you're creating the account for
+
+## Creating an Account for Your Righthand
 
 <Steps>
-  <Step title="Step 1">
-    {/* Determine which services require dedicated accounts */}
+  <Step title="Go to the Righthand's detail page">
+    Navigate to the [Team page](https://teams.righthand.ai/teams/people) and click on the Righthand you want to create an account for. Take note of their **email address** and **phone number** — you'll need these in the next steps.
   </Step>
-  <Step title="Step 2">
-    {/* Create the account in the third-party service */}
+  <Step title="Sign up for the service">
+    Go to the service you want to create an account on (e.g., github.com) and begin the sign-up process. Use the Righthand's email address or phone number from Step 1 as the account credentials.
   </Step>
-  <Step title="Step 3">
-    {/* Configure appropriate permissions and access levels */}
+  <Step title="Find the verification email or text">
+    Back on the Righthand's detail page, click the **Threads** tab (next to "Overview"). Look for the sign-up verification email or text from the service.
+
+    {/* TODO: Add image of the Threads tab showing a verification email */}
+    <Frame>
+      <img src="/images/accounts/threads-verification.png" alt="Threads tab showing a sign-up verification email" />
+    </Frame>
   </Step>
-  <Step title="Step 4">
-    {/* Link the account to your Righthand */}
+  <Step title="Activate the account">
+    Copy the verification code or link from the thread and open it in your browser to complete the account activation.
+  </Step>
+  <Step title="Handle MFA (optional)">
+    If the service requires multi-factor authentication, we recommend using **text message verification** with the Righthand's phone number. After triggering the MFA prompt:
+
+    1. Go back to the **Threads** tab on the Righthand's detail page
+    2. Reload the page
+    3. Find and copy the 2FA code from the incoming text
+
+    <Warning>
+      If the service doesn't support SMS-based MFA, you'll need to store the MFA codes separately. Support for adding MFA codes directly to a Righthand is coming soon.
+    </Warning>
+  </Step>
+  <Step title="Connect the account">
+    Navigate to the [Add More](https://teams.righthand.ai/connections/add-more) page and search for the service you just signed up for. Click on it and complete the OAuth flow to link the account.
+
+    If the service doesn't appear in the connection list, refer to [Connection Types](/guides/connection-types) for how to add it as a credentials-based connection instead.
+
+    {/* TODO: Add image of selecting the connection on the Add More page */}
+    <Frame>
+      <img src="/images/accounts/add-connection.png" alt="Searching for and selecting a connection on the Add More page" />
+    </Frame>
+  </Step>
+  <Step title="Set the scope to Righthand">
+    Once connected, set the **Connection Scope** to **Righthand** and assign it to the relevant Righthand. This ensures the account is recognized as belonging to that specific Righthand.
+
+    {/* TODO: Add image of setting the connection scope to Righthand */}
+    <Frame>
+      <img src="/images/accounts/set-righthand-scope.png" alt="Setting the connection scope to Righthand" />
+    </Frame>
   </Step>
 </Steps>
-
-## Account Types
-
-{/* Describe the different types of accounts a Righthand might need */}
-
-<CardGroup cols={2}>
-  <Card title="Email Account" icon="envelope">
-    {/* When and how to set up a dedicated email for a Righthand */}
-  </Card>
-  <Card title="Calendar Access" icon="calendar">
-    {/* Setting up calendar access */}
-  </Card>
-  <Card title="Communication Tools" icon="comments">
-    {/* Setting up Slack, Teams, or other messaging access */}
-  </Card>
-  <Card title="Development Tools" icon="code">
-    {/* Setting up repository or CI/CD access */}
-  </Card>
-</CardGroup>
-
-## Security Considerations
-
-{/* Best practices for account security: principle of least privilege, audit logging, credential rotation */}
-
-## Managing Righthand Accounts
-
-{/* How to view, update, and revoke account access */}
 
 <Info>
   Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
