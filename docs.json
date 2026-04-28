@@ -31,7 +31,8 @@
         "pages": [
           "guides/connection-types",
           "guides/add-a-connection",
-          "guides/setting-up-accounts"
+          "guides/setting-up-accounts",
+          "guides/setting-up-github-for-righthands"
         ]
       },
       {

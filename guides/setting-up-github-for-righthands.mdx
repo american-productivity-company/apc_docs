@@ -1,0 +1,154 @@
+---
+title: "Setting Up GitHub for Righthands"
+description: "Create a dedicated GitHub account, connect it to a Righthand, and unblock organization access"
+icon: "github"
+---
+
+## Overview
+
+GitHub works best when a Righthand has a dedicated GitHub account that belongs to the Righthand, not to the manager. This gives the Righthand its own audit trail, repository access, organization membership, and OAuth connection.
+
+The setup has two parts:
+
+- Create and invite the Righthand's GitHub account.
+- Connect that account from the Righthand's settings page.
+
+<Warning>
+  GitHub organization settings can block a connected Righthand even when OAuth succeeds. If your organization restricts third-party application access, approve the Righthand GitHub connector or temporarily set the policy to **No restrictions** before asking the Righthand to use organization resources.
+</Warning>
+
+## Before You Start
+
+- You must be a **manager** of the Righthand.
+- You need access to the Righthand's detail page in Righthand.
+- You need owner or admin access to the GitHub organization or repository you want the Righthand to use.
+- If you are inviting the Righthand to a GitHub organization, know whether the organization restricts third-party application access.
+
+## Recommended Flow
+
+<Steps>
+  <Step title="Open the Righthand's settings">
+    Open the Righthand's detail page, then go to **Settings**. Find the **Righthand GitHub Developer Account** card.
+
+    Note the Righthand's email address and phone number. You'll use those when creating the GitHub account and retrieving any verification codes.
+
+    <Frame>
+      <img src="/images/github-righthands/settings-github-before-connect.jpg" alt="Righthand GitHub Developer Account card before connection" />
+    </Frame>
+
+    Your card may omit the username field shown here. The important part is that you create the GitHub account first, then use **Connect GitHub** to authorize that account.
+  </Step>
+
+  <Step title="Create the GitHub account">
+    In a private browser window, go to [github.com/signup](https://github.com/signup) and create an account for the Righthand using the Righthand's email address.
+
+    Choose a recognizable username for the Righthand. It does not have to match anything in Righthand exactly, but it should be easy for your team to recognize in commits, pull requests, and GitHub organization membership lists.
+
+    <Frame>
+      <img src="/images/github-righthands/github-signup-create-account.jpg" alt="GitHub sign-up form using the Righthand email address" />
+    </Frame>
+  </Step>
+
+  <Step title="Retrieve the GitHub verification code">
+    If GitHub sends a launch code, email verification, or SMS verification to the Righthand, ask the Righthand to send you the setup code. Use your manager phone number or another trusted user channel.
+
+    <Frame>
+      <img src="/images/github-righthands/righthand-github-code-sms.jpg" alt="SMS thread where the Righthand sends the GitHub launch code to the manager" />
+    </Frame>
+
+    After GitHub confirms the account, sign in as the Righthand's GitHub account so you can finish organization invitations and OAuth.
+
+    <Frame>
+      <img src="/images/github-righthands/github-sign-in-after-account-created.jpg" alt="GitHub sign-in page after the Righthand account is created" />
+    </Frame>
+
+    Store the GitHub password somewhere your team controls. The Righthand can use OAuth tools after connection, but web sign-in may still require a human-controlled password.
+  </Step>
+
+  <Step title="Invite the account to GitHub">
+    From your GitHub owner or admin account, invite the Righthand's GitHub username to the organization, team, or repository it should use.
+
+    If you are inviting the account to an organization, the Righthand may receive an invitation email. Accept it while signed into the Righthand's GitHub account. If you want the Righthand to inspect or use organization membership through connected tools later, the OAuth connector must also be allowed by the organization policy.
+
+    Keep the Righthand GitHub username handy. You'll use it when inviting the account from GitHub.
+  </Step>
+
+  <Step title="Unblock third-party application access">
+    In GitHub, open the organization's settings:
+
+    `Organization > Settings > Third-party Access > OAuth app policy`
+
+    For the simplest setup, set the policy to **No restrictions**. If your organization needs restrictions enabled, approve the Righthand GitHub connector for the organization after the account authorizes it.
+
+    GitHub's own guides are here:
+
+    - [About OAuth app access restrictions](https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/about-oauth-app-access-restrictions)
+    - [Approving OAuth apps for your organization](https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/approving-oauth-apps-for-your-organization)
+
+    <Warning>
+      If this is blocked, GitHub can return a 403 that says the organization has enabled OAuth App access restrictions. The Righthand may be signed in correctly and still be unable to see or accept organization membership.
+    </Warning>
+
+    If the policy is restricted, the organization settings page looks like this:
+
+    <Frame>
+      <img src="/images/github-righthands/github-oauth-policy-restricted-settings.jpg" alt="GitHub organization third-party application access policy set to Access restricted" />
+    </Frame>
+
+    GitHub also shows the policy details and any pending application requests:
+
+    <Frame>
+      <img src="/images/github-righthands/github-oauth-policy-restricted-detail.jpg" alt="Restricted GitHub OAuth app policy details with no pending requests" />
+    </Frame>
+
+    If you remove restrictions, GitHub asks for confirmation:
+
+    <Frame>
+      <img src="/images/github-righthands/github-oauth-policy-remove-restrictions-confirm.png" alt="GitHub confirmation dialog before removing third-party application restrictions" />
+    </Frame>
+
+    Once unblocked, the policy should show **No restrictions**:
+
+    <Frame>
+      <img src="/images/github-righthands/github-oauth-policy-no-restrictions.jpg" alt="GitHub third-party application access policy showing No restrictions" />
+    </Frame>
+  </Step>
+
+  <Step title="Connect GitHub from Righthand settings">
+    Return to the Righthand's **Settings** page and click **Connect GitHub** or **Reconnect GitHub** on the GitHub card.
+
+    Sign into GitHub as the Righthand's GitHub account, not your personal account. Complete the OAuth flow.
+  </Step>
+
+  <Step title="Verify the connection">
+    Back on the Righthand settings page, the GitHub card should show **Active** and the Righthand's GitHub username.
+
+    <Frame>
+      <img src="/images/github-righthands/settings-github-active.jpg" alt="Righthand GitHub Developer Account card showing Active after connection" />
+    </Frame>
+
+    Some card versions include additional repository or access rows. The generic setup check is **Active** plus the connected GitHub username; project-specific repository access is granted separately in GitHub.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+### GitHub says organization data is blocked
+
+The organization likely has OAuth App access restrictions enabled. Open:
+
+`Organization > Settings > Third-party Access > OAuth app policy`
+
+Then either set the policy to **No restrictions** or approve the Righthand GitHub connector for that organization.
+
+### The Righthand can authenticate but cannot see the organization
+
+Check three things:
+
+1. The Righthand's GitHub account accepted the organization invitation.
+2. The organization's OAuth app policy allows the connector.
+3. The repository or team grants the Righthand account the access it needs.
+
+### The Righthand asks for a GitHub password
+
+OAuth lets the Righthand use connected GitHub tools, but browser sign-in still requires GitHub credentials. Keep the password in a team-controlled password manager and use it only when a web-only GitHub step is required.
