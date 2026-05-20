@@ -21,6 +21,7 @@
         "pages": [
           "introduction",
           "guides/create-your-first-righthand",
+          "guides/change-righthand-work-schedule",
           "guides/adding-your-first-connection",
           "guides/setting-up-slack",
           "guides/adding-a-custom-domain"
