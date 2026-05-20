@@ -21,6 +21,7 @@
         "pages": [
           "introduction",
           "guides/create-your-first-righthand",
+          "guides/change-righthand-work-schedule",
           "guides/adding-your-first-connection",
           "guides/setting-up-slack",
           "guides/adding-a-custom-domain"
@@ -31,7 +32,8 @@
         "pages": [
           "guides/connection-types",
           "guides/add-a-connection",
-          "guides/setting-up-accounts"
+          "guides/setting-up-accounts",
+          "guides/setting-up-github-for-righthands"
         ]
       },
       {
