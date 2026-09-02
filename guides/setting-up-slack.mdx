@@ -1,37 +1,42 @@
 ---
 title: "Setting Up Slack"
-description: "Connect Slack so your Righthands can communicate and collaborate with your team"
+description: "Install a Righthand's Slack bot for direct messages and mentions"
 icon: "hashtag"
 ---
 
-## Overview
+Each Righthand can have a Slack bot so people in your workspace can send direct messages and mention the Righthand.
 
-Adding your Righthand to Slack lets your team DM and mention them directly in your workspace — just like any other team member. Setup takes less than a minute.
-
-## Prerequisites
-
-Before you begin, make sure you have:
-- An active Righthand on your team
-- Admin access to your Slack workspace (or permission to install apps)
-
-## Adding Your Righthand to Slack
+## Connect Slack
 
 <Steps>
-  <Step title="Go to the Righthand's detail page">
-    Navigate to the [Team page](https://teams.righthand.ai/teams/people) and click on the Righthand you want to add to Slack.
+  <Step title="Open the Righthand">
+    Go to [Righthands](https://teams.righthand.ai/righthands) and select the Righthand you want to add to Slack.
   </Step>
-  <Step title="Activate the Slack Bot">
-    On the overview page, scroll down to the **Slack Bot** section and click **Activate Slack Bot**.
-
-    <Frame>
-      <img src="/images/slack/activate-slack-bot.png" alt="Slack Bot activation section on the Righthand detail page" />
-    </Frame>
+  <Step title="Open Slack settings">
+    Select **Manage**, then **Slack**.
   </Step>
-  <Step title="Authorize in Slack">
-    You'll be taken through an OAuth flow to add the Righthand as an application in your Slack workspace. Follow the prompts to authorize access, and you're done — your team can now DM and mention your Righthand directly in Slack.
+  <Step title="Start the integration">
+    When the status is **Inactive**, select **Integrate**.
+  </Step>
+  <Step title="Authorize the correct workspace">
+    Complete the Slack authorization flow. Confirm the workspace name and requested access before approving. A Slack administrator may need to approve the installation.
+  </Step>
+  <Step title="Verify the bot">
+    Return to Righthand and confirm that the Slack status is **Active**. The pane shows the bot user and activation date.
+  </Step>
+  <Step title="Test a message">
+    In Slack, send the Righthand a direct message or mention the Righthand in a channel where the bot is present. Confirm the response and corresponding Activity entry.
   </Step>
 </Steps>
 
+## Communications policy
+
+The Slack bot's installation and the Righthand's outbound Slack permission are separate controls. To restrict outward Slack messages, open **Manage → Communications Policy** and set the **Slack** channel to **Allow**, **Ask**, or **Never**.
+
+## Deactivate Slack
+
+Open **Manage → Slack**, select **Deactivate**, and confirm. Deactivation stops the bot from responding to direct messages and mentions. You can integrate it again later.
+
 <Info>
-  Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
+  If Slack authorization succeeds but the bot does not respond, confirm that the bot is present in the conversation and that the Righthand is active. Then contact [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
 </Info>

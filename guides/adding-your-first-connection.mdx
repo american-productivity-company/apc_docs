@@ -1,57 +1,49 @@
 ---
-title: "Adding Your First Connection"
-description: "Connect a tool or service so your Righthand can start working with it"
+title: "Add Your First Connection"
+description: "Connect a service and make it available to the right Righthands"
 icon: "plug"
 ---
 
-## Overview
+Connections let Righthands use accounts and services such as Google Workspace, HubSpot, GitHub, and many others. Adding a connection and granting access are separate steps: successful sign-in does not automatically give every Righthand access.
 
-Once you've hired a Righthand, the next step is to give it access to the tools it needs. Connections let your Righthand interact with services like Google Workspace, Slack, HubSpot, GitHub, and more.
-
-## Prerequisites
-
-Before you begin, make sure you have:
-- An active Righthand on your team
-- Access to the third-party account you want to connect
-
-## Adding a Connection
+## Add a connection
 
 <Steps>
-  <Step title="Go to the Add More page">
-    Navigate to the [Add More](https://teams.righthand.ai/connections/add-more) page in the Righthand platform. You'll see all available integrations — browse or use the search bar to find the service you need.
-
-    <Frame>
-      <img src="/images/connections/add-more.png" alt="The Add More connections page" />
-    </Frame>
+  <Step title="Open Connections">
+    Go to [Connections](https://teams.righthand.ai/connections).
   </Step>
-  <Step title="Select a service and authorize">
-    Click on the service you want to connect. You'll be redirected to the service's login page to sign in and authorize access.
-
-    <Frame>
-      <img src="/images/connections/select-service.png" alt="Selecting a service to connect" />
-    </Frame>
+  <Step title="Choose Add">
+    Select the **Add** row. Search the catalog for the service you want to connect.
   </Step>
-  <Step title="Configure permissions">
-    Once connected, you can configure:
-    - **Connection scope** — who owns this connection (Personal, Righthand, or Team)
-    - **Righthand access** — which Righthands can use it
-    - **Tool permissions** — what each Righthand is allowed to do with it
-
-    See [Connection Permissions](/guides/add-a-connection) for a full breakdown of these settings.
-
-    <Frame>
-      <img src="/images/connections/configure-permissions.png" alt="Configuring connection permissions" />
-    </Frame>
+  <Step title="Sign in to the service">
+    Select the service and complete its authorization flow. Check the account name before approving access so you do not connect the wrong personal or company account.
   </Step>
-  <Step title="You're connected">
-    Your Righthand now has access to the service and can start using it based on the permissions you've set.
+  <Step title="Open the new connection">
+    After authorization, Righthand returns to **Connections** with the new connection selected. Give it a recognizable name if needed.
+  </Step>
+  <Step title="Set scope and Righthand access">
+    Choose whether the connection is **Personal**, **Righthand**, or **Team**. Then select the Righthands that should have access.
+  </Step>
+  <Step title="Review tool permissions">
+    If the connection exposes configurable tools, set each tool to **Yes**, **Ask**, or **No**.
   </Step>
 </Steps>
 
-<Tip>
-  Not sure what type of connection to use? Check out [Connection Types](/guides/connection-types) to understand the differences between OAuth, Credentials, and MCP.
-</Tip>
+<Warning>
+  Grant only the account, repositories, workspaces, and tool permissions the Righthand needs. A broad provider authorization and a broad Righthand permission are separate decisions; review both.
+</Warning>
 
-<Info>
-  Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
-</Info>
+## Verify the connection
+
+Ask the assigned Righthand to perform a small, reversible read action, such as listing a folder or finding a known record. Confirm the result in **Activity** before relying on the connection for a larger workflow.
+
+If a connection has a red status mark or returns an authorization error, open it and reconnect the underlying account. If that fails, delete the broken connection and add it again.
+
+<CardGroup cols={2}>
+  <Card title="Connection types" icon="circle-nodes" href="/guides/connection-types">
+    Understand hosted OAuth and custom MCP connections.
+  </Card>
+  <Card title="Connection permissions" icon="shield" href="/guides/add-a-connection">
+    Choose scope, Righthand access, and tool permissions.
+  </Card>
+</CardGroup>

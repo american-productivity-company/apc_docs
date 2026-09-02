@@ -1,56 +1,67 @@
 ---
-title: "How to Setup Unified Billing"
-description: "Configure unified billing to manage payments across your Righthands in one place"
-icon: "credit-card"
+title: "Billing and Payments"
+description: "Manage subscriptions, payment methods, invoices, boosts, and budgets"
+icon: "receipt"
 ---
 
-## Overview
+Billing is managed for the team. Your team's payment method covers Righthand subscriptions and any Usage Boosts or other billed usage.
 
-{/* Brief intro: what unified billing is and why it matters */}
+## Payment method and invoices
 
-## Prerequisites
+1. Open the **Account** menu.
+2. Select **Team settings**.
+3. Select **Billing**.
+4. Choose **Card** to add or update the payment method.
+5. Choose **Invoices** to open recent hosted invoices.
 
-{/* List requirements (e.g., admin access, payment method on file) */}
+You can also open [Team billing settings](https://teams.righthand.ai/team-settings?section=billing) directly.
 
-## Enabling Unified Billing
+## Righthand subscriptions
 
-<Steps>
-  <Step title="Step 1">
-    {/* Navigate to billing settings */}
-  </Step>
-  <Step title="Step 2">
-    {/* Enable unified billing toggle or option */}
-  </Step>
-  <Step title="Step 3">
-    {/* Configure payment method */}
-  </Step>
-  <Step title="Step 4">
-    {/* Assign Righthands to the billing profile */}
-  </Step>
-</Steps>
+Open the [billing dashboard](https://teams.righthand.ai/team-settings/billing) to review each Righthand's plan, monthly subscription cost, status, and current weekly usage.
 
-## Managing Your Billing
+Current plans are:
 
-{/* Describe how to view invoices, update payment methods, and manage billing contacts */}
+- **Starter:** $99 per month with 1x usage capacity.
+- **Pro:** $199 per month with 4x usage capacity.
 
-## Billing Breakdown
+Change an individual subscription from the Righthand's **Manage → Plan** page. Plan changes apply immediately and are prorated for the current billing cycle.
 
-{/* Explain how costs are itemized per Righthand or per team */}
+## Usage Boosts
 
-## Frequently Asked Questions
+When a Righthand needs more capacity before the next weekly reset, the subscriptions table can offer a **Usage Boost**. A boost is a one-time **$39** charge that adds 1x capacity for the rest of the current billing cycle.
+
+The confirmation dialog shows the Righthand, charge, and payment method before purchase. A payment method must be on file.
+
+## Budgets and monthly cap
+
+Use **Team settings → Budget** to manage team and per-Righthand budget limits. The billing dashboard also exposes a monthly cap for the total you can be billed in a month, including subscriptions and usage beyond them.
+
+The monthly cap cannot be lower than the team's subscription total because subscriptions are billed whether or not all included capacity is used. Leave the cap blank for no cap.
+
+## How subscription usage works
+
+- Each Righthand has a flat monthly subscription with a weekly usage allowance.
+- The weekly allowance resets every Sunday.
+- Righthand sends usage notices at 80%, 95%, and the limit.
+- Work paused at the limit resumes after the weekly reset.
+
+See [Usage and Capacity](/guides/usage-limits) for details.
+
+## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Can I have separate billing for different teams?">
-    {/* Answer */}
+  <Accordion title="A payment failed">
+    Open **Team settings → Billing → Card** and update the payment method. If the card is current, ask the card issuer about the decline before retrying.
   </Accordion>
-  <Accordion title="How do I update my payment method?">
-    {/* Answer */}
+  <Accordion title="An invoice is missing">
+    Check **Team settings → Billing → Invoices**. If the expected invoice is not listed, contact support with the team name and billing period.
   </Accordion>
-  <Accordion title="When are invoices generated?">
-    {/* Answer */}
+  <Accordion title="A Righthand stopped working">
+    Review **Team settings → Usage** and the Righthand's Activity. If the weekly limit was reached, buy a Usage Boost, change the plan, or wait for the Sunday reset.
   </Accordion>
 </AccordionGroup>
 
 <Info>
-  Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
+  For account-specific billing help, contact [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
 </Info>

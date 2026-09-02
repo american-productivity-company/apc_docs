@@ -1,0 +1,66 @@
+---
+title: "Setting Up GitHub"
+description: "Connect a Righthand's GitHub account with a personal access token"
+icon: "github"
+---
+
+The GitHub control under a Righthand's **Manage** area uses a GitHub personal access token (PAT). It does not use the OAuth app policy described in older versions of this guide.
+
+## Before you begin
+
+- Use a GitHub account that represents the Righthand if you want a separate audit trail.
+- Invite that account to the organization or repositories it needs.
+- Decide which repositories and actions the Righthand should be allowed to access.
+- Keep the account's password and recovery methods in a team-controlled password manager.
+
+## Create and connect the token
+
+<Steps>
+  <Step title="Create a fine-grained token">
+    While signed in to the intended GitHub account, open [GitHub's token creation page](https://github.com/settings/tokens?type=beta). Choose the appropriate resource owner, select only the required repositories, grant the minimum permissions needed for the Righthand's work, and set an expiration.
+
+    GitHub documents the complete flow in [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+  </Step>
+  <Step title="Complete organization approval">
+    If the resource owner is an organization that requires approval, ask an organization owner to approve the pending fine-grained token request. Until approval, the token cannot access the organization's private resources.
+  </Step>
+  <Step title="Open GitHub in Righthand">
+    Go to [Righthands](https://teams.righthand.ai/righthands), select the Righthand, then open **Manage → GitHub**.
+  </Step>
+  <Step title="Save the token">
+    Paste the token into the masked **Token** field and select **Save**. Righthand verifies the token before marking the integration active.
+  </Step>
+  <Step title="Verify access">
+    Confirm that the GitHub pane shows **Active** and the expected GitHub account. Ask the Righthand to read a known repository before assigning write work.
+  </Step>
+</Steps>
+
+<Warning>
+  Treat a PAT like a password. Paste it only into **Manage → GitHub**. Never send it to the Righthand in a message or store it in a repository.
+</Warning>
+
+## Organization approval
+
+If a fine-grained token is pending, a GitHub organization owner can review it under the organization's **Settings → Personal access tokens → Pending requests**. GitHub's guide is [Managing requests for personal access tokens](https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/managing-requests-for-personal-access-tokens-in-your-organization).
+
+## Replace or disconnect a token
+
+The GitHub pane shows **Needs attention** when a token has expired or cannot be verified.
+
+- Select **Replace token** to paste and verify a fresh token.
+- Select **Disconnect** to remove GitHub access from the Righthand.
+- Rotate the token before its expiration date to avoid interrupted work.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The token is active but a repository is missing">
+    Confirm that the GitHub account can access the repository, that the token's repository selection includes it, and that the token has the permissions required for the attempted action.
+  </Accordion>
+  <Accordion title="The token is pending">
+    Ask a GitHub organization owner to approve the fine-grained token request. A pending token can read public resources but not the organization's private resources.
+  </Accordion>
+  <Accordion title="Righthand shows Needs attention">
+    Create a fresh token, select **Replace token**, and verify the connection again. Revoke the old token in GitHub if it is no longer needed.
+  </Accordion>
+</AccordionGroup>
