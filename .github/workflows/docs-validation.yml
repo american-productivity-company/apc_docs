@@ -1,0 +1,35 @@
+name: Validate docs
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  mintlify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Mintlify CLI
+        run: npm install --global mintlify@4.2.531
+
+      - name: Validate configuration and MDX
+        run: mintlify validate
+
+      - name: Check links and anchors
+        run: mintlify broken-links --check-anchors --check-redirects
+
+      - name: Check accessibility
+        run: mintlify a11y

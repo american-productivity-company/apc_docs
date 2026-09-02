@@ -1,39 +1,50 @@
 ---
 title: "Security Overview"
-description: "How Righthand keeps your data and accounts secure"
+description: "The controls that protect connections and outward actions"
 icon: "shield"
 ---
 
-## Overview
+Righthand combines encrypted connection storage with controls for ownership, Righthand access, individual tools, and external communications. Configure each layer for the work you actually want a Righthand to perform.
 
-Righthand is designed with security at every layer — from how your credentials are stored to how your Righthands communicate with the outside world. This page provides a high-level summary of the security controls available to you.
+## Connections
 
-## Connection Security
+Connection credentials and tokens are encrypted at rest, and connection traffic is encrypted in transit. Hosted integrations use provider authorization flows where available so you can grant access without giving a Righthand the account password.
 
-All credentials and connection data are **encrypted at rest** and **in transit**. OAuth is used as the default connection method wherever possible, so your passwords are never shared with or stored by Righthand.
+Each connection can be controlled through:
 
-Every connection has layered access controls — including **connection scope**, **Righthand access**, and **granular tool permissions** — so you decide exactly who can use each connection and what they can do with it.
+- **Scope:** Personal, Righthand, or Team ownership.
+- **Righthand access:** which Righthands can use the connection.
+- **Tool permissions:** Yes, Ask, or No for individual tools when available.
 
 <Card title="Connection Security" icon="lock" href="/security/connection-security">
-  Learn how your connections and credentials are protected
+  Configure least-privilege access and revoke a connection safely.
 </Card>
 
-## External Communications
+## External communications
 
-You control whether each Righthand can reach out to people outside your team. The **External Comms** setting lets you choose between **Allow**, **Ask**, or **Never** for each Righthand — giving you full control over outbound emails, messages, and calls.
+Each Righthand has separate **Allow**, **Ask**, or **Never** controls for email, messages, calls, Slack, calendar actions, and connected-app actions. These controls apply to externally visible outbound actions, not simply to reading or drafting.
 
 <Card title="External Communications" icon="envelope-open-text" href="/security/external-communications">
-  Learn how outbound communication is managed
+  Understand per-channel policy and conversational approval.
 </Card>
 
-## Voice Authentication
+## Voice authentication
 
-For phone calls, Righthand supports **voice authentication passphrases** — a simple way for the person on the other end of a call to verify they're speaking with your Righthand.
+When a voice passphrase is configured for a user, it helps authenticate that user on calls with Righthands. Treat the passphrase as a secret and do not reuse an account password.
 
 <Card title="Voice Authentication" icon="microphone" href="/security/voice-authentication">
-  Learn how identity is verified on phone calls
+  Learn when a passphrase is configured and how to get help changing it.
 </Card>
 
+## Practical security checklist
+
+- Connect the least-privileged provider account that can do the job.
+- Assign access only to the Righthands that need it.
+- Use **Ask** for consequential tools and outward actions that need review.
+- Keep passwords, personal access tokens, recovery codes, and API keys out of messages and repositories.
+- Remove access both in Righthand and at the provider when a credential should no longer work.
+- Review Activity after changing a sensitive connection or policy.
+
 <Info>
-  Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
+  For security or account-access help, contact [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
 </Info>

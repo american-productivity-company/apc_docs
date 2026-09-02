@@ -1,94 +1,59 @@
 ---
-title: "Setting Up Call Forwarding"
-description: "Route incoming calls to your Righthand for screening, handling, or scheduling"
+title: "Forwarding Calls to a Righthand"
+description: "Route selected incoming calls to a Righthand's phone number"
 icon: "phone-arrow-right"
 ---
 
-## Overview
+You can use your mobile carrier's call-forwarding service to send selected incoming calls to a Righthand. Forwarding behavior, supported conditions, activation codes, and fees are controlled by your carrier—not by Righthand.
 
-Your Righthand can act as an AI receptionist — screening incoming calls, filtering out spam, and making sure important contacts always reach you. Forward your calls to your Righthand and it will intelligently handle each one based on who's calling and your preferences.
+## Before you begin
 
-## How Call Screening Works
+- Open the Righthand's profile and copy the Righthand's phone number.
+- Decide whether to forward all calls or only calls that are unanswered, busy, or unreachable.
+- Review your carrier's current call-forwarding instructions and charges.
 
-When a call comes in, your Righthand follows this process:
+<Warning>
+  Do not use forwarding codes copied from an old guide. Carrier codes vary by carrier, plan, country, and device, and they can change. Use your carrier's current official instructions.
+</Warning>
 
-1. **Priority contacts** — Recognized VIP contacts ring through to you immediately.
-2. **Known contacts** — Handled according to your preferences (forward, take a message, etc.).
-3. **Unknown numbers** — Your Righthand engages the caller to assess legitimacy before deciding how to handle it.
-4. **Spam and robocalls** — Automatically dismissed.
-
-Your Righthand uses calendar awareness, contact history, and personal context to respond appropriately to every call.
-
-## Prerequisites
-
-Before setting up call forwarding, make sure you have:
-- A Righthand with a phone number assigned (this is set up automatically when you hire one)
-- Access to your phone's settings or carrier account
-- Your Righthand's phone number (found on their detail page)
-
-## Setting Up Call Forwarding (iPhone)
+## Set up forwarding
 
 <Steps>
-  <Step title="Disable Live Voicemail">
-    Go to **Settings → Phone → Live Voicemail** and turn it off. This prevents your phone from intercepting calls before they can be forwarded to your Righthand.
+  <Step title="Find your carrier's instructions">
+    Search your carrier's support site for **call forwarding** or **conditional call forwarding**. Conditional forwarding is the usual choice when you still want your phone to ring first.
   </Step>
-  <Step title="Turn off immediate call forwarding">
-    If you have unconditional call forwarding enabled, turn it off so you can set up conditional forwarding instead.
+  <Step title="Choose the conditions">
+    Follow the carrier's instructions for the conditions you want, such as no answer, busy, or unreachable.
   </Step>
-  <Step title="Enable conditional forwarding">
-    Use your carrier's forwarding codes to route unanswered, busy, or unreachable calls to your Righthand's phone number.
-
-    <AccordionGroup>
-      <Accordion title="AT&T">
-        Dial `*004*[Righthand Phone Number]*11#` and press call.
-      </Accordion>
-      <Accordion title="Verizon">
-        Dial `*71[Righthand Phone Number]` and press call.
-      </Accordion>
-      <Accordion title="T-Mobile">
-        Dial `**61*[Righthand Phone Number]#` and press call.
-      </Accordion>
-    </AccordionGroup>
+  <Step title="Enter the Righthand's number">
+    Use the full Righthand phone number, including country code when the carrier requires it.
   </Step>
-  <Step title="Set up a Focus mode (optional)">
-    Create an iPhone Focus mode that limits notifications to your VIP contacts. This works well alongside call forwarding — important calls ring through while everything else goes to your Righthand.
+  <Step title="Confirm activation">
+    Wait for the carrier's confirmation message or use its status check. Do not assume the setting was accepted merely because the call ended.
   </Step>
-  <Step title="Test it out">
-    Have someone call you from a known number and an unknown number to verify that calls are being forwarded and screened correctly.
+  <Step title="Test from another number">
+    Place a test call that matches the chosen condition. Confirm that the Righthand answers and that the call appears in the Righthand's **Activity**.
   </Step>
 </Steps>
-
-## Advanced Features
-
-Your Righthand gets smarter about call handling over time. Key capabilities include:
-
-- **Relationship awareness** — Knows how to handle calls differently for family, colleagues, and service providers.
-- **Calendar integration** — Responds with context about your availability and schedule.
-- **Contact history** — References past interactions for continuity across calls.
-- **Custom instructions** — Set specific rules for how certain types of calls should be handled.
-- **Follow-up actions** — Can send emails, create tasks, or schedule callbacks after a call.
-
-## Best Practices
-
-- **Define your VIP list** — Make sure your most important contacts are marked so they always ring through.
-- **Keep your context updated** — The more your Righthand knows about your schedule and preferences, the better it handles calls.
-- **Review call summaries** — Check in on how calls are being handled and provide feedback to improve screening.
-- **Keep Focus mode active** — If you've set one up, leave it on during work hours for the best experience.
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Calls aren't being forwarded">
-    Make sure Live Voicemail is disabled and that conditional forwarding is set up with the correct carrier code. Try re-entering the forwarding code and testing with a call.
+  <Accordion title="Calls go to carrier voicemail instead">
+    Carrier voicemail or device features such as Live Voicemail may answer before the forwarding condition triggers. Compare the voicemail delay with the forwarding delay and follow your carrier's instructions for adjusting them.
   </Accordion>
-  <Accordion title="All calls go straight to Righthand">
-    You may have unconditional (immediate) forwarding enabled. Turn it off and set up conditional forwarding instead so you still receive calls from priority contacts.
+  <Accordion title="Every call forwards immediately">
+    Unconditional forwarding may be enabled. Disable it using your carrier's instructions, then configure only the conditional forwarding states you want.
   </Accordion>
-  <Accordion title="Righthand isn't picking up forwarded calls">
-    Verify your Righthand's phone number is correct in the forwarding settings. If the number is correct, reach out to support.
+  <Accordion title="The Righthand does not answer">
+    Call the Righthand's number directly. If the direct call works, recheck the carrier destination and forwarding status. If it does not, contact Righthand support.
   </Accordion>
 </AccordionGroup>
 
+## Turn forwarding off
+
+Use your carrier's official deactivation instructions, then test your number from another phone. Removing or retiring the Righthand does not automatically change settings on your carrier account.
+
 <Info>
-  Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
+  Righthand support can help verify the Righthand number, but only your carrier can change forwarding on your phone line.
 </Info>

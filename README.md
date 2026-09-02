@@ -1,32 +1,38 @@
-# APC Docs
+# Righthand Docs
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+Public product documentation for [Righthand](https://www.righthand.ai), published at [docs.righthand.ai](https://docs.righthand.ai).
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+## Local development
 
-### Development
+Use Node.js 20 LTS, then install the pinned Mintlify CLI version used by CI:
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
-
-```
-npm i -g mintlify
+```bash
+npm install --global mintlify@4.2.531
 ```
 
-Run the following command at the root of your documentation (where docs.json is)
+From this repository's root, start a local preview:
 
-```
+```bash
 mintlify dev
 ```
 
-### Publishing Changes
+Before opening a pull request, run the same checks as CI:
 
-Install our Github App to auto propagate changes from your repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard. 
+```bash
+mintlify validate
+mintlify broken-links --check-anchors --check-redirects
+mintlify a11y
+```
 
-#### Troubleshooting
+## Source of truth
 
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `docs.json`
+These docs describe the customer-visible behavior of the Righthand platform. Verify changing product details—especially pricing, navigation, permissions, billing, and integrations—against the current application before editing. Do not add speculative workflows, placeholder API references, or screenshots from retired interfaces.
+
+## Publishing
+
+Mintlify publishes the production docs from the repository's default branch. Changes should land through a reviewed pull request after local validation and preview QA.
+
+## Troubleshooting
+
+- If `mintlify dev` fails to start, run `mintlify install` and try again.
+- If a page returns 404 locally, confirm it exists in `docs.json` and that the preview command is running from the directory containing `docs.json`.

@@ -1,118 +1,115 @@
 ---
 name: righthand-docs
-description: Answer user-facing questions about Righthand setup, hiring, tiers, upgrades, connections, dedicated accounts, GitHub, Slack, custom domains, call forwarding, external communications, voice authentication, security, billing, and usage limits using the Righthand docs. Use when a Righthand user asks how to do something in Righthand or what Righthand supports; cite docs and do not invent undocumented product behavior.
+description: Answer user-facing questions about hiring, working with, connecting, managing, securing, and billing Righthands using the current public Righthand docs. Use for product setup and support questions; cite the relevant docs and never invent an undocumented control, guarantee, or workflow.
 license: MIT
-compatibility: Works with Mintlify-hosted Righthand docs. Use the docs site's llms.txt when available; otherwise read the local MDX docs in this repository.
+compatibility: Works with Mintlify-hosted Righthand docs. Use the current site's llms.txt when available; otherwise read docs.json and the local MDX pages in this repository.
 metadata:
   author: Righthand
-  version: "1.0"
+  version: "2.0"
 ---
 
 # Righthand Docs
 
-Use this skill to coach Righthand users with grounded, user-facing product guidance. Treat the Righthand docs as the source of truth. If the docs do not cover the user's exact question, say that clearly and give the safest next step, usually checking the Righthand platform or contacting support.
+Use these docs to give grounded product guidance. Read the most specific current page before answering, provide the shortest path that achieves the user's goal, and cite the page you used.
 
-## Quick Start
+## Workflow
 
-1. Classify the question: hiring/onboarding, tiers or upgrade, connections, dedicated accounts, Slack, GitHub, custom domains, calls, external communications, security, billing, usage limits, legal, or API.
-2. Discover current docs before answering:
-   - If this skill is loaded from the public docs site, fetch `/llms.txt` from the same docs host and use it to find the relevant pages.
-   - If working in the docs repository, read `docs.json` and the relevant `.mdx` files.
-3. Read the most specific page before answering. Prefer the reference map below over broad search.
-4. Answer in a helpful product-support tone, with steps when the docs provide steps.
-5. Include links or citations to the docs pages used. Keep quotes short; paraphrase by default.
-6. If the docs page is a placeholder or missing the requested procedure, do not fill gaps from assumption. Say the docs do not currently specify it and route to `support@humans.righthand.ai` when needed.
+1. Classify the question using the reference map below.
+2. If loaded from the public site, read `/llms.txt` and then the relevant page. If working in this repository, read `docs.json` and the relevant `.mdx` file.
+3. Confirm that the requested control is currently documented. Navigation, pricing, permissions, and integration setup change often.
+4. Answer with a direct sentence followed by numbered steps when a procedure exists.
+5. Include a link to the relevant public page.
+6. If the docs do not specify the behavior, say so and direct the user to the platform or `support@humans.righthand.ai`. Do not fill the gap from assumption.
 
-## Reference Map
+## Reference map
 
-- **Getting started / what is a Righthand**: `introduction.mdx`
-- **Hire a Righthand / choose tier / assign manager and email domain**: `guides/create-your-first-righthand.mdx`
-- **Upgrade or change tier / work schedule**: `guides/change-righthand-work-schedule.mdx`; use `guides/create-your-first-righthand.mdx` for tier meanings.
-- **Add the first connection**: `guides/adding-your-first-connection.mdx`
-- **Connection types**: `guides/connection-types.mdx`
-- **Connection scope, Righthand access, and tool permissions**: `guides/add-a-connection.mdx`
-- **Dedicated accounts for a Righthand**: `guides/setting-up-accounts.mdx`
-- **Dedicated GitHub account and organization OAuth policy**: `guides/setting-up-github-for-righthands.mdx`
-- **Slack setup**: `guides/setting-up-slack.mdx`
-- **Custom email domain**: `guides/adding-a-custom-domain.mdx`
-- **Call forwarding and call screening**: `guides/call-forwarding.mdx`
-- **External communications modes**: `security/external-communications.mdx`
-- **Voice authentication**: `security/voice-authentication.mdx`
-- **Security overview**: `security/overview.mdx`
-- **Connection security**: `security/connection-security.mdx`
-- **Usage limits**: `guides/usage-limits.mdx`
-- **Unified billing**: `guides/unified-billing.mdx` exists but is currently a placeholder. Do not cite it as a complete procedure.
-- **Legal / terms / privacy**: `legal/terms-of-service/platform-terms-of-service.mdx`, `legal/terms-of-service/user-terms-of-service.mdx`, and `legal/privacy-policy.mdx`
-- **API reference**: `api-reference/introduction.mdx` and `api-reference/openapi.json`
+- **What a Righthand is / docs index**: `introduction.mdx`
+- **Hire / Own → Meet → Connect / first setup**: `guides/create-your-first-righthand.mdx`
+- **Contact a Righthand / Activity / stuck work**: `guides/working-with-your-righthand.mdx`
+- **Individual Manage settings / retire**: `guides/managing-your-righthand.mdx`
+- **Responsibilities / recurring workflows**: `guides/responsibilities-and-workflows.mdx`
+- **Add a connection**: `guides/adding-your-first-connection.mdx`
+- **Hosted integrations / custom MCP / GitHub distinction**: `guides/connection-types.mdx`
+- **Connection scope / Righthand access / tool permissions**: `guides/add-a-connection.mdx`
+- **Dedicated provider accounts**: `guides/setting-up-accounts.mdx`
+- **GitHub personal access token**: `guides/setting-up-github-for-righthands.mdx`
+- **Slack bot setup**: `guides/setting-up-slack.mdx`
+- **Starter / Pro / change plan / legacy plans**: `guides/change-righthand-work-schedule.mdx`
+- **Weekly capacity / usage notices / Usage Boost**: `guides/usage-limits.mdx`
+- **Payment method / invoices / subscriptions / budgets**: `guides/unified-billing.mdx`
+- **Custom email domain and DNS**: `guides/adding-a-custom-domain.mdx`
+- **Carrier call forwarding**: `guides/call-forwarding.mdx`
+- **Security summary**: `security/overview.mdx`
+- **Connection credential and revocation guidance**: `security/connection-security.mdx`
+- **External communications Allow / Ask / Never**: `security/external-communications.mdx`
+- **Voice passphrase**: `security/voice-authentication.mdx`
+- **Legal**: pages under `legal/`
 
-## Answer Patterns
+## Current product facts
 
-### Procedural Questions
+Use these only after checking the relevant page:
 
-For "how do I..." questions:
+- New hires follow **Own → Meet → Connect**, use the current user as manager, and start on Starter.
+- **Starter** is $99/month with 1x usage; **Pro** is $199/month with 4x usage. Both plans include the same capabilities.
+- A **Usage Boost** is a one-time $39 charge for an additional 1x capacity through the rest of the billing cycle.
+- Included capacity resets every Sunday; notices are sent at 80%, 95%, and the limit.
+- Connections are added from `/connections` using the **Add** row, not an `/add-more` page.
+- Connection controls are **Scope**, **Righthand access**, and tool-level **Yes / Ask / No**.
+- An individual Righthand's Manage areas are Voice, Budget, Conversation Style, Communications Policy, Plan, Model, Slack, GitHub, and Retire.
+- GitHub under Manage uses a personal access token, not OAuth.
+- Communications Policy is per channel: Email, Messages, Calls, Slack, Calendar, and Connected apps.
+- The Account page currently has no self-service passphrase editor.
+- There is no public Righthand API reference in these docs.
+
+## Answer patterns
+
+### Procedure
 
 ```markdown
-[Direct answer in one sentence.]
+[Direct answer.]
 
-Steps:
-1. [Step from docs]
-2. [Step from docs]
-3. [Step from docs]
+1. [Exact navigation from the docs.]
+2. [Action.]
+3. [Verification or expected state.]
 
-Docs: [page title](relative-or-absolute-url)
+Docs: [Page title](https://docs.righthand.ai/path)
 ```
 
-If the docs do not include a step-by-step path:
+### Plan or usage question
+
+State the exact plan, price, and capacity relevant to the question. Distinguish a lasting plan change from a temporary Usage Boost. Mention immediate proration only for plan changes, and mention that a payment method is required.
+
+### Connection question
+
+Preserve all relevant layers:
+
+1. Provider-side account and resource access.
+2. Connection scope.
+3. Assigned Righthands.
+4. Tool permission: Yes, Ask, or No.
+5. Communications Policy when the tool creates an external effect.
+
+### External communications question
+
+- **Allow** permits external outbound on that channel.
+- **Ask** requires an explicit outward instruction or conversational approval.
+- **Never** blocks external outbound on that channel.
+- Assigning a task and silence are never approval.
+- Authenticated users and Righthands on the same APC team remain reachable. A contact label does not make an external person team-internal.
+
+### Missing or uncertain behavior
 
 ```markdown
-The docs do not currently publish a step-by-step flow for [task]. They do document [closest grounded fact]. Check the Righthand platform for the current control, and contact support@humans.righthand.ai if it is not visible.
+The current docs do not specify [requested behavior]. Check the current control in Righthand, and contact support@humans.righthand.ai if it is not visible.
 
-Docs: [closest page](relative-or-absolute-url)
+Docs: [Closest relevant page](https://docs.righthand.ai/path)
 ```
 
-### Upgrade Questions
+## Safety and quality rules
 
-When the user asks "how do I upgrade", "change my plan", "increase limits", or "get more hours":
-
-Use the documented work-schedule route:
-
-1. Go to Righthands in the Righthand platform.
-2. Open People, then select the Righthand.
-3. Open the Righthand's Settings tab.
-4. In Work schedule, click the current Tier button.
-5. Select Part-Time, Full-Time, or Over-Time, then confirm the upgrade or downgrade.
-
-Also mention:
-
-- The billing table is a read-only overview; the editable control is on the individual Righthand Settings page.
-- Changes are prorated to the current billing cycle.
-- If Work schedule is not visible on the Righthand Settings page, contact `support@humans.righthand.ai`.
-
-Docs: `guides/change-righthand-work-schedule.mdx`
-
-### Connection Questions
-
-Use this routing:
-
-- "What kind of connection should I use?" -> `guides/connection-types.mdx`
-- "How do I connect a service?" -> `guides/adding-your-first-connection.mdx`
-- "Who can use this connection?" -> `guides/add-a-connection.mdx`
-- "Should my Righthand have its own account?" -> `guides/setting-up-accounts.mdx`
-- "GitHub is blocked / org access is restricted" -> `guides/setting-up-github-for-righthands.mdx`
-
-When discussing connection permissions, preserve the docs' three-layer model: connection scope, Righthand access, and tool permissions.
-
-## Gotchas
-
-- Several docs pages still contain MDX placeholder comments. Treat placeholder sections as absent documentation.
-- Do not invent pricing, exact usage limits, overage rules, invoice timing, dashboard URLs, security guarantees, or legal interpretations.
-- User-facing docs are the authority for customer answers. Internal APC implementation docs can help maintain the docs, but they should not be used to make customer-facing promises unless the public docs say the same thing.
-- For legal questions, summarize what the terms or privacy page says and recommend contacting support or counsel for interpretation.
-- For security questions, use the exact controls described in the docs: encryption in transit and at rest, OAuth by default, connection scope, Righthand access, tool permissions, external comms modes, and voice authentication passphrases.
-
-## Quality Rules
-
-- Ground every answer in at least one current docs page when possible.
-- Prefer concise step-by-step guidance over broad product explanation.
-- Be explicit about uncertainty: "The docs do not currently specify..." is better than guessing.
-- Keep the user's goal in view. If a doc page is incomplete, give the nearest actionable next step without pretending the product has a documented workflow.
+- Never invent pricing, limits, timing, overage behavior, navigation, provider permissions, security guarantees, or legal interpretations.
+- Never ask a user to send a password, API key, access token, recovery code, or voice passphrase to a Righthand in a message.
+- For DNS and carrier call forwarding, tell the user to use the live values and official provider instructions. Do not provide remembered record counts or carrier codes.
+- Deleting a connection in Righthand may not revoke the provider token; recommend revocation at both layers when complete removal matters.
+- Treat legal pages as text to summarize, not as legal advice.
+- Prefer a small reversible verification after connecting a service or changing a consequential permission.

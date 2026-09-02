@@ -1,71 +1,45 @@
 ---
-title: "Setting Up Accounts for Righthands"
-description: "Create dedicated accounts that your Righthands own and use themselves"
+title: "Dedicated Accounts for Righthands"
+description: "Create and connect an account that belongs to one Righthand"
 icon: "user-gear"
 ---
 
-## Overview
+A dedicated account gives a Righthand its own identity and audit trail in a service. Use one when you want activity, access, and ownership separated from a manager's personal account.
 
-Some tools work best when your Righthand has their own dedicated account — just like a human employee would. For example, you might create a GitHub account for a Righthand Software Engineer, or a HubSpot account for a Righthand SDR.
+## Before you begin
 
-For certain services, like Resy, your Righthand is capable of creating an account on their own. But for most, you'll need to set it up manually and then connect it.
+- Confirm that the service permits the account type and automated use you intend.
+- Decide who will retain the password, recovery method, and administrator access.
+- Grant the minimum organization, workspace, or repository access needed.
 
-<Tip>
-  Setting up GitHub has one extra organization-policy step. Use the [GitHub setup guide](/guides/setting-up-github-for-righthands) when creating a dedicated GitHub developer account.
-</Tip>
-
-## Prerequisites
-
-- You must be a **manager** of the Righthand you're creating the account for
-
-## Creating an Account for Your Righthand
+## Create and connect the account
 
 <Steps>
-  <Step title="Go to the Righthand's detail page">
-    Navigate to the [Team page](https://teams.righthand.ai/teams/people) and click on the Righthand you want to create an account for. Take note of their **email address** and **phone number** — you'll need these in the next steps.
+  <Step title="Find the Righthand's contact details">
+    Open [Righthands](https://teams.righthand.ai/righthands), select the Righthand, and note their email address and phone number.
   </Step>
-  <Step title="Sign up for the service">
-    Go to the service you want to create an account on (e.g., github.com) and begin the sign-up process. Use the Righthand's email address or phone number from Step 1 as the account credentials.
+  <Step title="Create the provider account">
+    Sign up with the Righthand's email address or phone number when the provider permits it. Use a clear display name so teammates can recognize the Righthand's activity.
   </Step>
-  <Step title="Find the verification email or text">
-    Back on the Righthand's detail page, click the **Threads** tab (next to "Overview"). Look for the sign-up verification email or text from the service.
-
-    <Frame>
-      <img src="/images/accounts/threads-verification.png" alt="Threads tab showing a sign-up verification email" />
-    </Frame>
+  <Step title="Complete verification">
+    If the provider sends an email or text, open the Righthand's **Activity** to find the incoming message. Complete the verification in your own browser.
   </Step>
-  <Step title="Activate the account">
-    Copy the verification code or link from the thread and open it in your browser to complete the account activation.
+  <Step title="Secure account recovery">
+    Store the password and recovery codes in a team-controlled password manager. Follow the provider's MFA policy; do not rely on the Righthand as the only recovery path.
   </Step>
-  <Step title="Handle MFA (optional)">
-    If the service requires multi-factor authentication, we recommend using **text message verification** with the Righthand's phone number. After triggering the MFA prompt:
-
-    1. Go back to the **Threads** tab on the Righthand's detail page
-    2. Reload the page
-    3. Find and copy the 2FA code from the incoming text
-
-    <Warning>
-      If the service doesn't support SMS-based MFA, you'll need to store the MFA codes separately. Support for adding MFA codes directly to a Righthand is coming soon.
-    </Warning>
+  <Step title="Add the connection">
+    Go to [Connections](https://teams.righthand.ai/connections), select **Add**, find the service, and authorize the new account.
   </Step>
-  <Step title="Connect the account">
-    Navigate to the [Add More](https://teams.righthand.ai/connections/add-more) page and search for the service you just signed up for. Click on it and complete the OAuth flow to link the account.
-
-    If the service doesn't appear in the connection list, refer to [Connection Types](/guides/connection-types) for how to add it as a credentials-based connection instead.
-
-    <Frame>
-      <img src="/images/accounts/add-connection.png" alt="Searching for and selecting a connection on the Add More page" />
-    </Frame>
+  <Step title="Set Righthand scope">
+    Open the new connection, change **Scope** to **Righthand**, choose the Righthand, and review tool permissions.
   </Step>
-  <Step title="Set the scope to Righthand">
-    Once connected, set the **Connection Scope** to **Righthand** and assign it to the relevant Righthand. This ensures the account is recognized as belonging to that specific Righthand.
-
-    <Frame>
-      <img src="/images/accounts/set-righthand-scope.png" alt="Setting the connection scope to Righthand" />
-    </Frame>
+  <Step title="Test access">
+    Ask the Righthand to perform a small read-only task and confirm the result in Activity.
   </Step>
 </Steps>
 
-<Info>
-  Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
-</Info>
+<Warning>
+  Do not send passwords, recovery codes, or access tokens to a Righthand through text, email, or chat. Use the platform's connection controls or the provider's authorization flow.
+</Warning>
+
+GitHub uses a dedicated setup under **Manage → GitHub**. See [Setting Up GitHub](/guides/setting-up-github-for-righthands).

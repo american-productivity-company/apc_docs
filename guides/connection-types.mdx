@@ -1,65 +1,48 @@
 ---
 title: "Connection Types"
-description: "Understand the different ways to connect tools and services to your Righthands"
+description: "Choose between hosted integrations and custom MCP servers"
 icon: "circle-nodes"
 ---
 
-## Overview
+The **Connections** catalog contains hosted integrations and a custom MCP option. In both cases, connect the service first, then configure [scope and permissions](/guides/add-a-connection).
 
-Connections give your Righthands access to the tools and services they need to do their job. There are three types of connections supported on the Righthand platform.
+## Hosted integrations
 
-All credentials and connection data are **encrypted at rest** and **in transit**, so your sensitive information is always protected.
+Hosted integrations use the service's authorization flow so you can grant access without sharing an account password with a Righthand. Depending on the service, Righthand completes that flow through an integration provider such as Composio or Pipedream.
 
-## OAuth (Recommended)
+Use a hosted integration when the service appears in the catalog. During authorization:
 
-OAuth is the preferred way to connect services to your Righthands. It provides direct access to third-party services — like Google Workspace, Slack, HubSpot, and more — without sharing your password, and gives you [granular tool permissions](/guides/add-a-connection#tool-permissions) to control exactly what your Righthands can do with each connection.
+- Sign in to the exact account you intend to connect.
+- Review the access the provider requests.
+- Complete any administrator approval required by your organization.
+- Return to Righthand and assign the connection to the intended Righthands.
 
-Righthand supports **over 1,500 integrations** through OAuth via Pipedream and Composio.
+## Custom MCP servers
 
-<Frame>
-  <img src="/images/connections/oauth-example.png" alt="Example of an OAuth connection" />
-</Frame>
+MCP (Model Context Protocol) lets a Righthand use tools exposed by a compatible server. Choose **MCP (Custom)** in the connection catalog, then provide:
 
-## Credentials
+- The MCP server URL.
+- An optional display name.
+- Authentication requested by the server, if any.
 
-For services that don't support OAuth, you can connect using a username and password (or API key). When using credentials, your Righthand logs into the account through the browser — just like a human would.
+Righthand probes the server and follows the authentication method it advertises. The flow may finish without authentication, redirect you through OAuth, or ask for authentication headers such as an API key or token.
 
 <Warning>
-  If the service requires multi-factor authentication (MFA), your Righthand will need to complete the MFA challenge during login. Keep this in mind when connecting MFA-protected accounts.
+  Connect only MCP servers you trust. The tools and data available to a Righthand are determined by the server as well as by the permissions you configure in Righthand.
 </Warning>
 
-### How to add a credentials connection
+Authentication headers are verified against the server and stored encrypted. They are not shown to the Righthand.
 
-Credentials connections are managed from the Righthand's detail page:
+## GitHub for a Righthand developer account
 
-1. Navigate to the [Team page](https://teams.righthand.ai/teams/people) and click on the Righthand you want to configure.
-2. Scroll to the bottom of the detail page and click **Developer** to reveal the Credentials section.
-3. Add the credentials for the service.
+The **GitHub** control under an individual Righthand's **Manage** area uses a personal access token, not the general connection catalog. Follow [Setting Up GitHub](/guides/setting-up-github-for-righthands) for that flow.
 
-<Frame>
-  <img src="/images/connections/credentials-example.png" alt="Example of a credentials connection" />
-</Frame>
+## Which option should I use?
 
-## MCP (Model Context Protocol)
+| Need | Use |
+| --- | --- |
+| A supported SaaS account | Hosted integration from **Connections → Add** |
+| An internal or third-party MCP endpoint | **MCP (Custom)** |
+| A GitHub identity dedicated to one Righthand | **Righthand → Manage → GitHub** |
 
-MCP connections allow your Righthands to interface with services that implement the Model Context Protocol. This is an open standard that enables AI employees to interact with tools and data sources in a structured way. Unlike OAuth and Credentials, MCP servers are loaded directly into the Righthand.
-
-### How to add an MCP connection
-
-MCP connections are managed from the Righthand's detail page:
-
-1. Navigate to the [Team page](https://teams.righthand.ai/teams/people) and click on the Righthand you want to configure.
-2. Scroll to the bottom of the detail page and click **Developer** to reveal the MCP section.
-3. Add the MCP server configuration.
-
-<Frame>
-  <img src="/images/connections/mcp-example.png" alt="Example of an MCP connection" />
-</Frame>
-
-<Tip>
-  Ready to connect your first service? See [Adding Your First Connection](/guides/adding-your-first-connection) for a walkthrough.
-</Tip>
-
-<Info>
-  Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
-</Info>
+If the service is not in the catalog and does not expose a compatible MCP server, contact [support@humans.righthand.ai](mailto:support@humans.righthand.ai) before sharing credentials by another method.

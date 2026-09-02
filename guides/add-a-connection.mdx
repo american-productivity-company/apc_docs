@@ -1,80 +1,58 @@
 ---
 title: "Connection Permissions"
-description: "Control who can use a connection and what your Righthands can do with it"
-icon: "plug"
+description: "Control ownership, Righthand access, and individual tools"
+icon: "shield"
 ---
 
-## Overview
+Every connection can have up to three layers of control: **scope**, **Righthand access**, and **tool permissions**.
 
-Every connection has three layers of control: **scope**, **Righthand access**, and **tool permissions**. Together, these let you decide who owns the connection, which Righthands can use it, and exactly what they're allowed to do with it.
+## 1. Scope
 
-## Connection Scope
+Scope controls who owns the connection and who can grant access.
 
-The scope determines who owns and controls the connection. When you add a connection, it defaults to **Personal**.
+| Scope | Use it for | Who can manage access |
+| --- | --- | --- |
+| **Personal** | An account that belongs to one human team member | The creator or a team administrator |
+| **Righthand** | An account dedicated to one Righthand | The selected Righthand is assigned automatically |
+| **Team** | An account the team intentionally shares | Authorized team members can assign Righthands |
 
-There are three scopes:
+Only the connection creator or a team administrator can change scope. Choosing **Righthand** also requires selecting which Righthand owns the connection.
 
-<CardGroup cols={3}>
-  <Card title="Personal" icon="user">
-    This account belongs to you. Only you can add or remove this connection from a Righthand.
+## 2. Righthand access
 
-    **Example:** Your personal Gmail account.
-  </Card>
-  <Card title="Righthand" icon="lock">
-    This account was created specifically for a single Righthand. It is meant to be used by that Righthand alone.
+The Righthand selector determines which assistants can use the connection.
 
-    **Example:** A dedicated GitHub account for a Righthand Software Engineer.
-  </Card>
-  <Card title="Team" icon="users">
-    This is a shared account accessible to the whole team. Any team member can assign it to their Righthands.
+- Team connections can be assigned to multiple Righthands.
+- The creator can assign their own Personal connection.
+- A Personal connection created by someone else is read-only to you.
+- A Righthand-scoped connection belongs to its selected Righthand.
 
-    **Example:** A shared database connection that doesn't need per-user access.
-  </Card>
-</CardGroup>
+Removing a Righthand from the selector disables that Righthand's access without deleting the underlying connection.
 
-<Frame>
-  <img src="/images/connections/connection-scope.png" alt="Connection scope settings showing Personal, Righthand, and Team options" />
-</Frame>
+## 3. Tool permissions
 
-<Note>
-  Righthands understand the sensitivities around connection permissions. They will respect the boundaries of each scope when working with your colleagues.
-</Note>
-
-## Righthand Access
-
-Toggle which Righthands on your team have access to a given connection. This lets you share a single connection with multiple Righthands or restrict it to just one.
-
-<Frame>
-  <img src="/images/connections/righthand-access.png" alt="Toggle Righthand access to a connection" />
-</Frame>
-
-## Tool Permissions
-
-For OAuth connections, each tool within the OAuth scope has its own permission level. This gives you granular control over what your Righthands can actually do with a connection.
-
-Each tool can be set to one of three permission levels:
+Connections that expose configurable tools use three values:
 
 | Permission | Behavior |
-|------------|----------|
-| **Yes** | The Righthand can use this tool freely without asking. |
-| **Ask** | The Righthand will request approval from the manager before using this tool. |
-| **No** | The Righthand cannot use this tool at all. |
+| --- | --- |
+| **Yes** | The Righthand may use the tool without asking first. |
+| **Ask** | The Righthand must receive approval before using the tool. |
+| **No** | The Righthand may not use the tool. |
 
-<Frame>
-  <img src="/images/connections/tool-permissions.png" alt="Tool permissions with Yes, Ask, and No options" />
-</Frame>
+Use the top permission row to apply one value to every tool, or expand **Tools** to configure them individually. For example, you can allow email search while requiring approval to send an email.
 
-## Managing Connections
+<Note>
+  Tool permission and [communications policy](/security/external-communications) are separate controls. An outward action must satisfy both the connection's tool permission and the Righthand's policy for that communications channel.
+</Note>
 
-You can view and manage all of your connections from the Connections page in the platform. From there you can:
+## Manage or remove a connection
 
-- Rename a connection
-- Activate or deactivate it
-- Change the scope
-- Update Righthand access
-- Adjust tool permissions
-- Remove the connection entirely
+Open [Connections](https://teams.righthand.ai/connections) and select the connection. From its detail pane you can:
 
-<Info>
-  Need help? Reach out to us at [support@humans.righthand.ai](mailto:support@humans.righthand.ai).
-</Info>
+- Rename it.
+- Change Righthand access.
+- Change tool permissions.
+- Change scope when authorized.
+- Delete the connection.
+
+Deleting a connection removes it from Righthand. If you need to revoke access at the provider too, revoke the corresponding authorization or token in that provider's security settings.

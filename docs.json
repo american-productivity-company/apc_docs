@@ -3,7 +3,7 @@
   "theme": "palm",
   "name": "Righthand Docs",
   "colors": {
-    "primary": "#d2553f",
+    "primary": "#c94a36",
     "light": "#ff9b7d",
     "dark": "#c94a36"
   },
@@ -21,19 +21,40 @@
         "pages": [
           "introduction",
           "guides/create-your-first-righthand",
-          "guides/change-righthand-work-schedule",
-          "guides/adding-your-first-connection",
-          "guides/setting-up-slack",
-          "guides/adding-a-custom-domain"
+          "guides/working-with-your-righthand"
         ]
       },
       {
         "group": "Connections",
         "pages": [
+          "guides/adding-your-first-connection",
           "guides/connection-types",
           "guides/add-a-connection",
           "guides/setting-up-accounts",
-          "guides/setting-up-github-for-righthands"
+          "guides/setting-up-github-for-righthands",
+          "guides/setting-up-slack"
+        ]
+      },
+      {
+        "group": "Manage Your Righthand",
+        "pages": [
+          "guides/managing-your-righthand",
+          "guides/responsibilities-and-workflows",
+          "guides/call-forwarding"
+        ]
+      },
+      {
+        "group": "Plans & Billing",
+        "pages": [
+          "guides/change-righthand-work-schedule",
+          "guides/usage-limits",
+          "guides/unified-billing"
+        ]
+      },
+      {
+        "group": "Team Administration",
+        "pages": [
+          "guides/adding-a-custom-domain"
         ]
       },
       {
