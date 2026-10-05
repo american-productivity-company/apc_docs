@@ -34,7 +34,7 @@ Use these docs to give grounded product guidance. Read the most specific current
 - **Dedicated provider accounts**: `guides/setting-up-accounts.mdx`
 - **GitHub personal access token**: `guides/setting-up-github-for-righthands.mdx`
 - **Slack bot setup**: `guides/setting-up-slack.mdx`
-- **Starter / Pro / change plan / legacy plans**: `guides/change-righthand-work-schedule.mdx`
+- **Starter / Pro / change plan / legacy plans**: `guides/plans-and-pricing.mdx`
 - **Weekly capacity / usage notices / Usage Boost**: `guides/usage-limits.mdx`
 - **Payment method / invoices / subscriptions / budgets**: `guides/unified-billing.mdx`
 - **Custom email domain and DNS**: `guides/adding-a-custom-domain.mdx`
@@ -52,7 +52,7 @@ Use these only after checking the relevant page:
 - New hires follow **Own → Meet → Connect**, use the current user as manager, and start on Starter.
 - **Starter** is $99/month with 1x usage; **Pro** is $199/month with 4x usage. Both plans include the same capabilities.
 - A **Usage Boost** is a one-time $39 charge for an additional 1x capacity through the rest of the billing cycle.
-- Included capacity resets every Sunday; notices are sent at 80%, 95%, and the limit.
+- Starter/Pro included weekly capacity resets every Sunday at 12:00 UTC; notices are sent at 80%, 95%, and the limit.
 - Connections are added from `/connections` using the **Add** row, not an `/add-more` page.
 - Connection controls are **Scope**, **Righthand access**, and tool-level **Yes / Ask / No**.
 - An individual Righthand's Manage areas are Voice, Budget, Conversation Style, Communications Policy, Plan, Model, Slack, GitHub, and Retire.
